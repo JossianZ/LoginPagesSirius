@@ -1,9 +1,8 @@
 <template>
     <div class="login2-form h-full flex flex-col">
-        <!-- Logo -->
-        <div class="flex items-center gap-3 mb-10">
-            <img :src="lobsterLogo" alt="Lobster Lead" class="w-8 h-8 object-contain" />
-            <span class="text-lg font-bold tracking-wide text-white">LOBSTER LEAD</span>
+        <!-- Logo - Only image, no text -->
+        <div class="mb-10">
+            <img :src="lobsterLogo" alt="Lobster Lead" class="h-12 object-contain" />
         </div>
 
         <!-- Header -->

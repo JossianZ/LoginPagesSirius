@@ -20,10 +20,7 @@
           <!-- AI Assistant Card -->
           <div class="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
             <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
-              <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-              </svg>
+              <img :src="lobsterSmallLogo" alt="Lobster Lead" class="w-6 h-6 object-contain" />
             </div>
             <h3 class="text-lg font-semibold text-white mb-2">{{ t.hero.features.aiAssistant.title }}</h3>
             <p class="text-sm text-zinc-400">{{ t.hero.features.aiAssistant.description }}</p>
@@ -31,17 +28,12 @@
 
           <!-- Happy Users Card -->
           <div class="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
-            <div class="flex items-center gap-1 mb-4">
-              <span
-                class="w-7 h-7 rounded-full bg-zinc-700 flex items-center justify-center text-xs font-bold text-zinc-300">A</span>
-              <span
-                class="w-7 h-7 rounded-full bg-zinc-700 flex items-center justify-center text-xs font-bold text-zinc-300">B</span>
-              <span
-                class="w-7 h-7 rounded-full bg-zinc-700 flex items-center justify-center text-xs font-bold text-zinc-300">C</span>
-              <span
-                class="w-7 h-7 rounded-full bg-zinc-700 flex items-center justify-center text-xs font-bold text-zinc-300">D</span>
-              <span
-                class="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center text-xs font-bold text-white">+2k</span>
+            <div class="flex items-center mb-4">
+              <span class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400">A</span>
+              <span class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">B</span>
+              <span class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">C</span>
+              <span class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">D</span>
+              <span class="w-8 h-8 rounded-full bg-red-500 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-white -ml-2">+2k</span>
             </div>
             <h3 class="text-lg font-semibold text-white mb-2">{{ t.hero.features.happyUsers.title }}</h3>
             <p class="text-sm text-zinc-400">{{ t.hero.features.happyUsers.description }}</p>
@@ -59,6 +51,7 @@ import { AuthLayout } from '@/layouts'
 import { Login2Form, Login2Hero } from '@/components/login2'
 import { useSettingsStore } from '@/stores'
 import { useTranslations } from '@/i18n'
+import lobsterSmallLogo from '@/assets/lobstersmalllogo.png'
 
 const settingsStore = useSettingsStore()
 const t = computed(() => useTranslations(settingsStore.language))
