@@ -61,7 +61,7 @@ export const translations: Record<'tr' | 'en', TranslationSchema> = {
             noAccount: 'Hesabınız yok mu?',
             createAccount: 'Hesap Oluştur',
             footer: {
-                copyright: '© 2024 Lobster Lead Inc.',
+                copyright: '© 2026 Lobster Lead Inc.',
                 privacy: 'Gizlilik Sözleşmesi',
                 terms: 'Kullanıcı Sözleşmesi'
             }
@@ -106,7 +106,7 @@ export const translations: Record<'tr' | 'en', TranslationSchema> = {
             noAccount: 'Don\'t have an account?',
             createAccount: 'Create Account',
             footer: {
-                copyright: '© 2024 Lobster Lead Inc.',
+                copyright: '© 2026 Lobster Lead Inc.',
                 privacy: 'Privacy Policy',
                 terms: 'Terms of Service'
             }

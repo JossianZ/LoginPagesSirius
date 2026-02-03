@@ -7,13 +7,16 @@
 
         <!-- Header -->
         <div class="mb-8">
-            <h1 class="text-2xl font-bold mb-2 text-white">{{ t.login.title }}</h1>
-            <p class="text-zinc-400">{{ t.login.subtitle }}</p>
+            <h1 :class="['text-2xl font-bold mb-2', settingsStore.theme === 'dark' ? 'text-white' : 'text-zinc-900']">{{
+                t.login.title }}</h1>
+            <p :class="settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'">{{ t.login.subtitle }}</p>
         </div>
 
         <!-- Google Button -->
-        <button type="button"
-            class="w-full flex items-center justify-center gap-3 px-4 py-3.5 bg-zinc-800 border border-zinc-700 rounded-xl text-white hover:bg-zinc-700 transition-colors mb-6">
+        <button type="button" :class="['w-full flex items-center justify-center gap-3 px-4 py-3.5 border rounded-xl transition-colors mb-6',
+            settingsStore.theme === 'dark'
+                ? 'bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700'
+                : 'bg-zinc-50 border-zinc-300 text-zinc-800 hover:bg-zinc-100']">
             <svg class="w-5 h-5" viewBox="0 0 24 24">
                 <path fill="#4285F4"
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -29,28 +32,37 @@
 
         <!-- Divider -->
         <div class="flex items-center gap-4 mb-6">
-            <div class="flex-1 h-px bg-zinc-700"></div>
-            <span class="text-sm text-zinc-500">{{ t.login.or }}</span>
-            <div class="flex-1 h-px bg-zinc-700"></div>
+            <div :class="['flex-1 h-px', settingsStore.theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300']"></div>
+            <span :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">{{ t.login.or
+            }}</span>
+            <div :class="['flex-1 h-px', settingsStore.theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300']"></div>
         </div>
 
         <!-- Form -->
         <form @submit.prevent="handleSubmit" class="space-y-5 flex-1">
             <!-- Email -->
             <div>
-                <label class="block text-sm text-zinc-400 mb-2">{{ t.login.emailLabel }}</label>
-                <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder"
-                    class="w-full px-4 py-3.5 bg-zinc-800 border border-zinc-700 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors" />
+                <label
+                    :class="['block text-sm mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
+                        t.login.emailLabel }}</label>
+                <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-3.5 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+                    settingsStore.theme === 'dark'
+                        ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
+                        : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
             </div>
 
             <!-- Password -->
             <div>
-                <label class="block text-sm text-zinc-400 mb-2">{{ t.login.passwordLabel }}</label>
+                <label
+                    :class="['block text-sm mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
+                        t.login.passwordLabel }}</label>
                 <div class="relative">
-                    <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••"
-                        class="w-full px-4 py-3.5 pr-12 bg-zinc-800 border border-zinc-700 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors" />
+                    <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••" :class="['w-full px-4 py-3.5 pr-12 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+                        settingsStore.theme === 'dark'
+                            ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
+                            : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
                     <button type="button" @click="showPassword = !showPassword"
-                        class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300">
+                        :class="['absolute right-4 top-1/2 -translate-y-1/2', settingsStore.theme === 'dark' ? 'text-zinc-500 hover:text-zinc-300' : 'text-zinc-400 hover:text-zinc-600']">
                         <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -69,8 +81,10 @@
             <div class="flex items-center justify-between">
                 <label class="flex items-center gap-2 cursor-pointer">
                     <input v-model="rememberMe" type="checkbox"
-                        class="w-4 h-4 rounded border-zinc-600 bg-zinc-800 text-red-500 focus:ring-red-500 focus:ring-offset-0" />
-                    <span class="text-sm text-zinc-400">{{ t.login.rememberMe }}</span>
+                        :class="['w-4 h-4 rounded focus:ring-red-500 focus:ring-offset-0',
+                            settingsStore.theme === 'dark' ? 'border-zinc-600 bg-zinc-800 text-red-500' : 'border-zinc-300 bg-white text-red-500']" />
+                    <span :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
+                        t.login.rememberMe }}</span>
                 </label>
                 <a href="#" class="text-sm text-red-500 hover:text-red-400 transition-colors">
                     {{ t.login.forgotPassword }}
@@ -85,17 +99,28 @@
         </form>
 
         <!-- Create Account -->
-        <div class="mt-6 text-center">
-            <span class="text-sm text-zinc-500">{{ t.login.noAccount }}</span>
-            <a href="#" class="text-sm text-white hover:text-red-500 font-medium ml-1 transition-colors">{{
-                t.login.createAccount }}</a>
+        <div class="mt-8 text-center border-t pt-6"
+            :class="settingsStore.theme === 'dark' ? 'border-zinc-800' : 'border-zinc-200'">
+            <span :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-500']">{{
+                t.login.noAccount }}</span>
+            <a href="#"
+                :class="['text-sm font-semibold ml-1 transition-colors underline',
+                    settingsStore.theme === 'dark' ? 'text-white hover:text-red-500' : 'text-zinc-900 hover:text-red-500']">{{
+                        t.login.createAccount }}</a>
         </div>
 
         <!-- Footer -->
-        <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-zinc-500">
+        <div
+            :class="['mt-6 flex items-center justify-between text-xs', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">
             <span>{{ t.login.footer.copyright }}</span>
-            <a href="#" class="hover:text-zinc-300 transition-colors">{{ t.login.footer.privacy }}</a>
-            <a href="#" class="hover:text-zinc-300 transition-colors">{{ t.login.footer.terms }}</a>
+            <div class="flex items-center gap-6">
+                <a href="#"
+                    :class="['transition-colors', settingsStore.theme === 'dark' ? 'hover:text-zinc-300' : 'hover:text-zinc-600']">{{
+                        t.login.footer.privacy }}</a>
+                <a href="#"
+                    :class="['transition-colors', settingsStore.theme === 'dark' ? 'hover:text-zinc-300' : 'hover:text-zinc-600']">{{
+                        t.login.footer.terms }}</a>
+            </div>
         </div>
     </div>
 </template>
