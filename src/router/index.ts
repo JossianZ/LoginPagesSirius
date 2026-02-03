@@ -23,7 +23,7 @@ const routes: RouteRecordRaw[] = [
         name: 'Login2',
         component: () => import('@/views/Login2View.vue'),
         meta: {
-            title: 'Login 2',
+            title: 'Lobster Lead - Giriş',
             layout: 'auth'
         }
     },
