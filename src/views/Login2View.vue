@@ -17,8 +17,9 @@
 
         <!-- Right Bottom - 2 Feature Cards (separate) -->
         <div class="hidden lg:grid grid-cols-2 gap-4">
-          <!-- AI Assistant Card -->
-          <div class="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+          <!-- AI Assistant Card - hover red border -->
+          <div
+            class="p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-red-500 transition-colors cursor-pointer">
             <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
               <img :src="lobsterSmallLogo" alt="Lobster Lead" class="w-6 h-6 object-contain" />
             </div>
@@ -26,14 +27,20 @@
             <p class="text-sm text-zinc-400">{{ t.hero.features.aiAssistant.description }}</p>
           </div>
 
-          <!-- Happy Users Card -->
-          <div class="p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
+          <!-- Happy Users Card - hover purple/blue gradient border -->
+          <div
+            class="p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-500 transition-colors cursor-pointer">
             <div class="flex items-center mb-4">
-              <span class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400">A</span>
-              <span class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">B</span>
-              <span class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">C</span>
-              <span class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">D</span>
-              <span class="w-8 h-8 rounded-full bg-red-500 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-white -ml-2">+2k</span>
+              <span
+                class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400">A</span>
+              <span
+                class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">B</span>
+              <span
+                class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">C</span>
+              <span
+                class="w-8 h-8 rounded-full bg-zinc-800 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-zinc-400 -ml-2">D</span>
+              <span
+                class="w-8 h-8 rounded-full bg-red-500 border-2 border-zinc-900 flex items-center justify-center text-xs font-bold text-white -ml-2">+2k</span>
             </div>
             <h3 class="text-lg font-semibold text-white mb-2">{{ t.hero.features.happyUsers.title }}</h3>
             <p class="text-sm text-zinc-400">{{ t.hero.features.happyUsers.description }}</p>

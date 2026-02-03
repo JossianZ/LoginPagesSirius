@@ -7,10 +7,9 @@
             </span>
         </div>
 
-        <!-- Content: Workflow + Title + Description -->
-        <div class="flex-1 flex flex-col items-center justify-center">
-            <!-- Workflow Diagram -->
-            <div class="flex items-center gap-3 mb-8">
+        <!-- Workflow Diagram - Centered -->
+        <div class="flex-1 flex items-center justify-center">
+            <div class="flex items-center gap-3">
                 <!-- Brand Box -->
                 <div class="flex flex-col items-center">
                     <div
@@ -76,16 +75,17 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Title -->
-            <h1 class="text-3xl lg:text-4xl font-bold text-center mb-3">
+        <!-- Title & Description - Bottom Left -->
+        <div class="mt-auto">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">
                 <span class="text-white">{{ t.hero.title }}</span>
                 <br />
-                <span class="text-red-500">{{ t.hero.titleHighlight }}</span>
+                <span class="bg-gradient-to-r from-pink-500 via-red-500 to-violet-500 bg-clip-text text-transparent">{{
+                    t.hero.titleHighlight }}</span>
             </h1>
-
-            <!-- Description -->
-            <p class="text-zinc-400 text-center text-sm max-w-md">
+            <p class="text-zinc-400 text-base max-w-lg leading-relaxed">
                 {{ t.hero.description }}
             </p>
         </div>

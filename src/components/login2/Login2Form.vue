@@ -40,7 +40,7 @@
             <div>
                 <label class="block text-sm text-zinc-400 mb-2">{{ t.login.emailLabel }}</label>
                 <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder"
-                    class="w-full px-4 py-3.5 bg-zinc-800 border border-zinc-700 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-colors" />
+                    class="w-full px-4 py-3.5 bg-zinc-800 border border-zinc-700 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors" />
             </div>
 
             <!-- Password -->
@@ -48,7 +48,7 @@
                 <label class="block text-sm text-zinc-400 mb-2">{{ t.login.passwordLabel }}</label>
                 <div class="relative">
                     <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••"
-                        class="w-full px-4 py-3.5 pr-12 bg-zinc-800 border border-zinc-700 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-colors" />
+                        class="w-full px-4 py-3.5 pr-12 bg-zinc-800 border border-zinc-700 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors" />
                     <button type="button" @click="showPassword = !showPassword"
                         class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300">
                         <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +87,8 @@
         <!-- Create Account -->
         <div class="mt-6 text-center">
             <span class="text-sm text-zinc-500">{{ t.login.noAccount }}</span>
-            <a href="#" class="text-sm text-red-500 hover:text-red-400 font-medium ml-1">{{ t.login.createAccount }}</a>
+            <a href="#" class="text-sm text-white hover:text-red-500 font-medium ml-1 transition-colors">{{
+                t.login.createAccount }}</a>
         </div>
 
         <!-- Footer -->
