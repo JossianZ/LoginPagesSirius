@@ -4,10 +4,10 @@
     <label
       v-if="label"
       :for="inputId"
-      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+      class="block text-sm font-medium text-gray-900 mb-2"
     >
       {{ label }}
-      <span v-if="required" class="text-rose-500 ml-0.5">*</span>
+      <span v-if="required" class="text-red-500 ml-0.5">*</span>
     </label>
 
     <!-- Input Container -->
@@ -31,7 +31,7 @@
         :required="required"
         :autocomplete="autocomplete"
         :class="inputClasses"
-        class="w-full bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-rose-500/20 focus:border-rose-500 disabled:opacity-50 disabled:cursor-not-allowed"
+        class="w-full bg-white border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 disabled:opacity-50 disabled:cursor-not-allowed"
         @input="onInput"
         @blur="$emit('blur', $event)"
         @focus="$emit('focus', $event)"
@@ -47,12 +47,12 @@
     </div>
 
     <!-- Error Message -->
-    <p v-if="error" class="mt-1.5 text-sm text-rose-500">
+    <p v-if="error" class="mt-1.5 text-sm text-red-500">
       {{ error }}
     </p>
 
     <!-- Helper Text -->
-    <p v-else-if="helperText" class="mt-1.5 text-sm text-gray-500 dark:text-gray-400">
+    <p v-else-if="helperText" class="mt-1.5 text-sm text-gray-500">
       {{ helperText }}
     </p>
   </div>
@@ -136,7 +136,7 @@ const inputClasses = computed(() => {
   
   // Add error state styling
   if (props.error) {
-    classes.push('border-rose-500 focus:border-rose-500 focus:ring-rose-500/20')
+    classes.push('border-red-500 focus:border-red-500 focus:ring-red-500')
   }
   
   return classes
