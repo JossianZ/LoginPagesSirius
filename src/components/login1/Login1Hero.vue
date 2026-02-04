@@ -21,13 +21,10 @@
     </div>
 
     <!-- Animated Background Circles -->
-    <div class="absolute inset-0 overflow-hidden">
-      <!-- Large Dark Blue Circle -->
-      <div class="absolute w-96 h-96 rounded-full bg-gradient-to-br from-slate-700/60 to-slate-800/40"
-        style="top: 20%; right: 5%; animation: float 8s ease-in-out infinite;" />
+    <div class="absolute inset-0 overflow-hidden">  
       <!-- Medium Rose/Burgundy Circle -->
       <div class="absolute w-72 h-72 rounded-full bg-gradient-to-br from-rose-900/50 to-rose-800/30"
-        style="top: 15%; right: 15%; animation: float 6s ease-in-out infinite 1s;" />
+        style="top: 25%; right: 35%; animation: float 6s ease-in-out infinite 1s;" />
       <!-- Small Teal Circle -->
       <div class="absolute w-56 h-56 rounded-full bg-gradient-to-br from-teal-600/30 to-cyan-700/20"
         style="top: 45%; right: 25%; animation: float 7s ease-in-out infinite 0.5s;" />

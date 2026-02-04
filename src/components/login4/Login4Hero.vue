@@ -18,7 +18,7 @@
             <!-- Logo and Subtitle -->
             <div class="mb-20 text-center">
                 <img :src="callingaiLogo" alt="CallingAI" class="h-28 object-contain mx-auto mb-3 brightness-0 invert" />
-                <p class="text-cyan-400/40 text-sm ml-auto mr-0 w-fit">Yapay Zeka Çağrı Merkezi</p>
+                <p class="text-slate-400 text-sm ml-auto mr-0 w-fit">Yapay Zeka Çağrı Merkezi</p>
             </div>
 
             <!-- Feature Cards -->

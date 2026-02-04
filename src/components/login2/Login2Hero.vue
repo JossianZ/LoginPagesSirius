@@ -1,7 +1,7 @@
 <template>
     <div class="login2-hero h-full flex flex-col relative justify-between">
         <!-- Version Badge - Top Right -->
-        <div class="absolute top-0 right-0 z-10">
+        <div class="absolute -top-3 right-0 z-10">
             <span :class="['px-3 py-1.5 text-xs font-medium rounded-full',
                 settingsStore.theme === 'dark' ? 'bg-zinc-800 text-white' : 'bg-zinc-900 text-white']">
                 {{ t.hero.version }}
