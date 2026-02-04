@@ -1,9 +1,4 @@
 <template>
-  <!-- 
-    Login1View.vue
-    İlk login sayfası görünümü.
-    Sol tarafta hero, sağ tarafta form bölümü bulunan split layout.
-  -->
   <AuthLayout>
     <div class="login1-view min-h-screen w-full flex flex-row">
       <!-- Left Side - Hero Section -->
@@ -22,13 +17,6 @@
 <script setup lang="ts">
 import { AuthLayout } from '@/layouts'
 import { Login1Hero, Login1Form } from '@/components/login1'
-
-/**
- * Login1View
- * 
- * İlk login sayfası.
- * Seferi lojistik platformu için modern login deneyimi.
- */
 </script>
 
 <style scoped>
