@@ -39,9 +39,8 @@
 
                 <!-- Lobster Lead Box -->
                 <div class="flex flex-col items-center">
-                    <div
-                        :class="['w-24 h-24 rounded-2xl flex items-center justify-center border-2 border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.6)] animate-float-delayed',
-                            settingsStore.theme === 'dark' ? 'bg-slate-900' : 'bg-white']">
+                    <div :class="['w-24 h-24 rounded-2xl flex items-center justify-center border-2 border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.6)] animate-float-delayed',
+                        settingsStore.theme === 'dark' ? 'bg-slate-900' : 'bg-white']">
                         <img :src="lobsterSmallLogo" alt="Lobster Lead" class="w-16 h-16 object-contain" />
                     </div>
                     <span
@@ -62,10 +61,17 @@
                     <div
                         :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3',
                             settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']">
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z" />
+                        <div
+                            class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-share2 lucide-share-2 size-3.5"
+                                aria-hidden="true" style="color: rgb(89, 63, 217);">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
                             </svg>
                         </div>
                         {{ t.hero.badge.socialMedia }}
@@ -88,7 +94,8 @@
                     <div
                         :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3',
                             settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']">
-                        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
                             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -130,29 +137,35 @@ const t = computed(() => useTranslations(settingsStore.language))
 
 <style scoped>
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 @keyframes float-delayed {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
 }
 
 .animate-float-delayed {
-  animation: float-delayed 3s ease-in-out infinite;
-  animation-delay: 0.5s;
+    animation: float-delayed 3s ease-in-out infinite;
+    animation-delay: 0.5s;
 }
 </style>
