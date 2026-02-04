@@ -19,7 +19,7 @@
 
           <!-- Features Button -->
           <button
-            class="px-6 py-2.5 bg-white hover:bg-white/90 hover:scale-105 rounded-lg text-violet-600 text-sm font-semibold transition-all duration-200 mb-8">
+            class="px-6 py-2.5 bg-white hover:bg-white/90 rounded-lg text-violet-600 text-sm font-semibold transition-all duration-200 mb-8">
             Özellikler
           </button>
 
