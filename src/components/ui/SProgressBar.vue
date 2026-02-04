@@ -72,7 +72,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const trackClasses = computed(() => {
-  return 'bg-black/80'
+  return 'bg-slate-950/90'
 })
 
 const barClasses = computed(() => {
