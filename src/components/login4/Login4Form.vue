@@ -1,5 +1,5 @@
 <template>
-    <div class="login4-form h-full flex flex-col items-center justify-center p-8 lg:p-12">
+    <div class="login4-form h-full flex flex-col items-center justify-center p-8 lg:p-12 bg-[#0c1a2e]">
         <div class="w-full max-w-sm">
             <!-- Header -->
             <div class="mb-8 text-center">
@@ -20,7 +20,7 @@
                             </svg>
                         </div>
                         <input v-model="email" type="email" placeholder="ornek@sirket.com"
-                            class="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" />
+                            class="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors" />
                     </div>
                 </div>
 
@@ -28,8 +28,17 @@
                 <div>
                     <div class="flex items-center justify-between mb-2">
                         <label class="text-sm text-slate-300">Şifre</label>
-                        <a href="#" class="text-xs text-cyan-400 hover:text-cyan-300 transition-colors">Şifremi
-                            Unuttum</a>
+                        <a href="#" class="text-xs text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3">
+                                <path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"></path>
+                                <path d="M18 12v.5"></path>
+                                <path d="M16 17.93a9.77 9.77 0 0 1 0-11.86"></path>
+                                <path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33"></path>
+                                <path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4"></path>
+                                <path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98"></path>
+                            </svg>
+                            Şifremi Unuttum
+                        </a>
                     </div>
                     <div class="relative">
                         <div class="absolute left-4 top-1/2 -translate-y-1/2">
@@ -39,7 +48,7 @@
                             </svg>
                         </div>
                         <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••"
-                            class="w-full pl-12 pr-12 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" />
+                            class="w-full pl-12 pr-12 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors" />
                         <button type="button" @click="showPassword = !showPassword"
                             class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-400 transition-colors">
                             <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor"
@@ -68,14 +77,14 @@
                             </svg>
                         </div>
                         <input v-model="domain" type="text" placeholder="sirket-adi"
-                            class="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors" />
+                            class="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors" />
                     </div>
                     <p class="text-xs text-slate-500 mt-1.5">Organizasyonunuzun benzersiz domain adı</p>
                 </div>
 
                 <!-- Submit Button -->
                 <button type="submit"
-                    class="w-full py-3 bg-cyan-500 hover:bg-cyan-600 rounded-lg text-white font-semibold transition-colors flex items-center justify-center gap-2 hover:scale-[1.02] transition-all duration-200">
+                    class="w-full py-3 bg-cyan-700 hover:bg-cyan-600 rounded-lg text-white font-semibold transition-colors flex items-center justify-center gap-2 hover:scale-[1.02] transition-all duration-200 shadow-[0_0_20px_rgba(6,182,212,0.5)]">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -85,7 +94,7 @@
             </form>
 
             <!-- Footer -->
-            <p class="text-center text-xs text-slate-500 mt-6">
+            <p class="text-center text-xs text-slate-500 mt-6 whitespace-nowrap">
                 Giriş yaparak <a href="#" class="text-cyan-400 hover:text-cyan-300">Kullanım Koşulları</a> ve
                 <a href="#" class="text-cyan-400 hover:text-cyan-300">Gizlilik Politikası</a>'nı kabul etmiş olursunuz.
             </p>

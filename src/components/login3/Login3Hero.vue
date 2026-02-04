@@ -28,7 +28,7 @@
 
             <!-- Features Button -->
             <button
-                class="px-6 py-2.5 border border-white/30 rounded-full text-white text-sm font-medium hover:bg-white/10 transition-colors mb-8">
+                class="px-6 py-2.5 border border-white/30 rounded-full text-[#4000F0] text-sm font-medium hover:bg-white/10 transition-colors mb-8">
                 Özellikler
             </button>
 
@@ -70,7 +70,7 @@
 
             <!-- CTA Button -->
             <button
-                class="px-6 py-3 border border-white/30 rounded-full text-white text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
+                class="px-6 py-3 border border-white/30 rounded-full text-[#4000F0] text-sm font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
                 BOSS AI Deneyimleyin
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

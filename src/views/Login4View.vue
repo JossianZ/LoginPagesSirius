@@ -2,12 +2,12 @@
   <AuthLayout>
     <div class="login4-view min-h-screen w-full flex">
       <!-- Left Side - Hero -->
-      <div class="hidden lg:block lg:w-1/2 bg-slate-950 border-r border-slate-800">
+      <div class="hidden lg:block lg:w-1/2 bg-[#0a1628]">
         <Login4Hero />
       </div>
 
       <!-- Right Side - Form -->
-      <div class="w-full lg:w-1/2 bg-slate-900">
+      <div class="w-full lg:w-1/2 bg-[#0c1a2e]">
         <Login4Form />
       </div>
     </div>
