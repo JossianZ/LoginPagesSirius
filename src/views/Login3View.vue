@@ -3,14 +3,14 @@
     <div class="login3-view min-h-screen w-full flex">
       <!-- Left Side - Hero with Purple Gradient -->
       <div
-        class="hidden lg:block lg:w-[55%] bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 relative overflow-hidden">
+        class="hidden lg:block lg:w-[55%] bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 relative overflow-hidden h-screen">
         <!-- Background Circle Decoration -->
         <div class="absolute top-8 left-8 w-48 h-48 rounded-full border border-white/20 bg-white/5"></div>
 
         <!-- Content Container -->
-        <div class="h-full flex flex-col items-center justify-center p-10">
+        <div class="h-full flex flex-col items-center justify-center p-10 overflow-hidden">
           <!-- Boss AI Logo -->
-          <img :src="bossaiLogo" alt="Boss AI" class="w-28 h-28 object-contain mb-10" />
+          <img :src="bossaiLogo" alt="Boss AI" class="w-28 h-28 object-contain mb-10 transition-transform duration-300 hover:scale-110" />
 
           <!-- Title -->
           <h1 class="text-4xl font-bold text-white text-center mb-6">

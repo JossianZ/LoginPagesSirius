@@ -75,7 +75,7 @@
                             </svg>
                         </div>
                         {{ t.hero.badge.socialMedia }}
-                        <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse ml-auto"></span>
+                        <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse-glow-purple ml-auto"></span>
                     </div>
                     <!-- Blog - Red -->
                     <div
@@ -88,7 +88,7 @@
                             </svg>
                         </div>
                         {{ t.hero.badge.blog }}
-                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse ml-auto"></span>
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse-glow-red ml-auto"></span>
                     </div>
                     <!-- E-posta - Green -->
                     <div
@@ -102,7 +102,7 @@
                             </svg>
                         </div>
                         {{ t.hero.badge.email }}
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse ml-auto"></span>
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse-glow-green ml-auto"></span>
                     </div>
                 </div>
             </div>
@@ -160,6 +160,45 @@ const t = computed(() => useTranslations(settingsStore.language))
     }
 }
 
+@keyframes pulse-glow-purple {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.3);
+        box-shadow: 0 0 8px 2px rgba(168, 85, 247, 0.8);
+    }
+}
+
+@keyframes pulse-glow-red {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.3);
+        box-shadow: 0 0 8px 2px rgba(239, 68, 68, 0.8);
+    }
+}
+
+@keyframes pulse-glow-green {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.3);
+        box-shadow: 0 0 8px 2px rgba(34, 197, 94, 0.8);
+    }
+}
+
 .animate-float {
     animation: float 3s ease-in-out infinite;
 }
@@ -167,5 +206,19 @@ const t = computed(() => useTranslations(settingsStore.language))
 .animate-float-delayed {
     animation: float-delayed 3s ease-in-out infinite;
     animation-delay: 0.5s;
+}
+
+.animate-pulse-glow-purple {
+    animation: pulse-glow-purple 1.2s ease-in-out infinite;
+}
+
+.animate-pulse-glow-red {
+    animation: pulse-glow-red 1.2s ease-in-out infinite;
+    animation-delay: 0.2s;
+}
+
+.animate-pulse-glow-green {
+    animation: pulse-glow-green 1.2s ease-in-out infinite;
+    animation-delay: 0.4s;
 }
 </style>
