@@ -14,7 +14,8 @@
 
           <!-- Title -->
           <h1 class="text-4xl font-bold text-white text-center mb-6">
-            İşletmenizin<br />Dijital Asistanı
+            İşletmenizin<br />
+            <span class="inline-block bg-gradient-to-r from-white via-white to-gray-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">Dijital Asistanı</span>
           </h1>
 
           <!-- Features Button -->
@@ -25,14 +26,18 @@
 
           <!-- Carousel Dots -->
           <div class="flex items-center gap-3 mb-10">
-            <span class="w-2.5 h-2.5 rounded-full bg-white/40"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-white/40"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-white"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-white/40"></span>
+            <button @click="currentSlide = 0"
+              :class="['w-2.5 h-2.5 rounded-full transition-all', currentSlide === 0 ? 'bg-white' : 'bg-white/40']"></button>
+            <button @click="currentSlide = 1"
+              :class="['w-2.5 h-2.5 rounded-full transition-all', currentSlide === 1 ? 'bg-white' : 'bg-white/40']"></button>
+            <button @click="currentSlide = 2"
+              :class="['w-2.5 h-2.5 rounded-full transition-all', currentSlide === 2 ? 'bg-white' : 'bg-white/40']"></button>
+            <button @click="currentSlide = 3"
+              :class="['w-2.5 h-2.5 rounded-full transition-all', currentSlide === 3 ? 'bg-white' : 'bg-white/40']"></button>
           </div>
 
           <!-- Feature Card -->
-          <div class="group relative max-w-md mb-8 cursor-pointer">
+          <div class="group relative max-w-md mb-4 cursor-pointer">
             <!-- Glass Background on Hover -->
             <div
               class="absolute -inset-4 rounded-2xl bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -42,58 +47,84 @@
             <div class="relative flex items-start gap-4">
               <div
                 class="w-14 h-14 rounded-2xl bg-violet-500/80 group-hover:bg-white flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110">
-                <svg class="w-7 h-7 text-white group-hover:text-violet-600 transition-colors duration-300" fill="none"
+                <svg v-if="currentSlide === 0"
+                  class="w-7 h-7 text-white group-hover:text-violet-600 transition-colors duration-300" fill="none"
                   stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                     d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
+                <svg v-else-if="currentSlide === 1"
+                  class="w-7 h-7 text-white group-hover:text-violet-600 transition-colors duration-300" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <svg v-else-if="currentSlide === 2"
+                  class="w-7 h-7 text-white group-hover:text-violet-600 transition-colors duration-300" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <svg v-else
+                  class="w-7 h-7 text-white group-hover:text-violet-600 transition-colors duration-300" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-white mb-2">Veri Görselleştirme ve İçgörüler</h3>
-                <p class="text-sm text-white/70 leading-relaxed">Karmaşık verileri anlaşılır görsellerle sunarak
-                  trendleri ve fırsatları anında görün</p>
+                <h3 v-if="currentSlide === 0" class="text-xl font-bold text-white mb-2">Veri Görselleştirme ve İçgörüler
+                </h3>
+                <h3 v-else-if="currentSlide === 1" class="text-xl font-bold text-white mb-2">Akıllı Görev Yönetimi</h3>
+                <h3 v-else-if="currentSlide === 2" class="text-xl font-bold text-white mb-2">Otomatik Raporlama</h3>
+                <h3 v-else class="text-xl font-bold text-white mb-2">Gerçek Zamanlı Analitik</h3>
+
+                <p v-if="currentSlide === 0" class="text-sm text-white/70 leading-relaxed">Karmaşık verileri anlaşılır
+                  görsellerle sunarak trendleri ve fırsatları anında görün</p>
+                <p v-else-if="currentSlide === 1" class="text-sm text-white/70 leading-relaxed">Rutin iş görevlerinizi
+                  otomatikleştirerek ekibinizin zamanını stratejik girişimlere odaklayın</p>
+                <p v-else-if="currentSlide === 2" class="text-sm text-white/70 leading-relaxed">Özelleştirilebilir
+                  raporlar ile iş süreçlerinizi detaylı şekilde takip edin ve optimize edin</p>
+                <p v-else class="text-sm text-white/70 leading-relaxed">Anlık veri akışı ile işletmenizin performansını
+                  her an izleyin ve hızlı kararlar alın</p>
               </div>
             </div>
 
             <!-- Hover Buttons -->
             <div
-              class="relative flex items-center justify-center gap-3 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              class="relative flex items-center justify-center gap-4 mt-6 max-h-0 opacity-0 overflow-hidden group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300">
               <button
-                class="px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg text-white text-xs font-medium transition-all hover:scale-105 flex items-center gap-2">
-                <div class="w-6 h-6 rounded-md bg-white flex items-center justify-center">
-                  <svg class="w-3.5 h-3.5 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
+                class="px-6 py-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg text-white text-base font-medium transition-all hover:scale-105 flex items-center gap-2">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 Nasıl çalışır
               </button>
               <button
-                class="px-4 py-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg text-white text-xs font-medium transition-all hover:scale-105 flex items-center gap-2">
-                <div class="w-6 h-6 rounded-md bg-white flex items-center justify-center">
-                  <svg class="w-3.5 h-3.5 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                </div>
+                class="px-6 py-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg text-white text-base font-medium transition-all hover:scale-105 flex items-center gap-2">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
                 Örnek göster
               </button>
             </div>
           </div>
 
           <!-- Navigation Arrows -->
-          <div class="flex items-center justify-center gap-80 mb-6">
-            <button
-              class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors">
+          <div class="flex items-center justify-center gap-96 mb-6 mt-8">
+            <button @click="prevSlide" :disabled="currentSlide === 0"
+              :class="['w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-colors', currentSlide === 0 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-white/20']">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
-            <button
-              class="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors">
+            <button @click="nextSlide" :disabled="currentSlide === 3"
+              :class="['w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-colors', currentSlide === 3 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-white/20']">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
@@ -116,34 +147,34 @@
         <div class="w-full max-w-sm">
           <!-- Header -->
           <div class="mb-10 text-center">
-            <h1 class="text-3xl font-bold text-zinc-900 mb-2">
-              Hoş<span class="text-violet-600">geldiniz</span>
+            <h1 class="text-4xl font-bold text-zinc-900 mb-3">
+              Hoş<span class="text-indigo-600">geldiniz</span>
             </h1>
-            <p class="text-zinc-500 text-sm">İşletmenizin AI destekli asistanına giriş yapın</p>
+            <p class="text-zinc-500 text-base">İşletmenizin AI destekli asistanına giriş yapın</p>
           </div>
 
           <!-- Email Input -->
-          <div class="mb-4">
-            <label class="block text-sm text-zinc-600 mb-2">E-posta Adresi</label>
+          <div class="mb-6">
+            <label class="block text-sm text-zinc-700 mb-3 font-semibold">E-posta Adresi</label>
             <div class="relative">
               <div class="absolute left-4 top-1/2 -translate-y-1/2">
-                <svg class="w-5 h-5 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <input type="email" placeholder="E-posta adresinizi girin"
-                class="w-full pl-12 pr-4 py-3 bg-white border border-zinc-200 rounded-lg text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-violet-500 transition-colors" />
+                class="w-full pl-12 pr-4 py-2.5 bg-white border-2 border-zinc-200 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-indigo-600 transition-colors text-sm" />
             </div>
           </div>
 
           <!-- Continue Button -->
           <div class="flex justify-end mb-8">
             <button type="button"
-              class="text-violet-600 hover:text-violet-700 font-medium text-sm flex items-center gap-1 transition-all duration-300 transform hover:translate-x-3">
+              class="text-indigo-600 hover:text-indigo-700 font-bold text-base flex items-center gap-2 transition-all duration-300 transform hover:translate-x-2">
               Devam Et
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
           </div>
@@ -184,6 +215,32 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { AuthLayout } from '@/layouts'
 import bossaiLogo from '@/assets/bossailogo.svg'
+
+const currentSlide = ref(0)
+
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % 4
+}
+
+const prevSlide = () => {
+  currentSlide.value = currentSlide.value === 0 ? 3 : currentSlide.value - 1
+}
 </script>
+
+<style scoped>
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 6s linear infinite;
+}
+</style>
