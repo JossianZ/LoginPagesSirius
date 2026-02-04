@@ -1,27 +1,36 @@
 <template>
   <div class="s-progress-bar w-full">
     <!-- Label Row -->
-    <div v-if="showLabel" class="flex items-center justify-between mb-2 text-sm">
-      <span v-if="label" class="text-white/80 font-medium">{{ label }}</span>
-      <span class="text-white/60">{{ progress }}% {{ completedText }}</span>
+    <div v-if="showLabel" class="flex items-center justify-between mb-3 text-sm">
+      <span v-if="label" class="text-white font-medium">{{ label }}</span>
+      <span class="text-white/80 font-medium">{{ progress }}% {{ completedText }}</span>
     </div>
 
     <!-- Progress Track -->
-    <div 
-      class="h-2 rounded-full overflow-hidden"
-      :class="trackClasses"
-    >
-      <!-- Progress Bar -->
-      <div
-        class="h-full rounded-full transition-all duration-500 ease-out relative overflow-hidden"
-        :class="barClasses"
-        :style="{ width: `${progress}%` }"
+    <div class="relative">
+      <div 
+        class="h-3 rounded-full overflow-hidden"
+        :class="trackClasses"
       >
-        <!-- Animated Shine Effect -->
-        <div 
-          v-if="animated"
-          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"
-        />
+        <!-- Progress Bar -->
+        <div
+          class="h-full rounded-full transition-all duration-500 ease-out relative overflow-hidden"
+          :class="barClasses"
+          :style="{ width: `${progress}%` }"
+        >
+          <!-- Animated Shine Effect -->
+          <div 
+            v-if="animated"
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"
+          />
+        </div>
+      </div>
+      
+      <!-- Checkpoint Markers -->
+      <div class="absolute top-1/2 -translate-y-1/2 left-0 w-full h-3 flex items-center justify-between px-1">
+        <div class="w-3 h-3 rounded-sm border-2 border-teal-400 bg-slate-800 rotate-45"></div>
+        <div class="w-3 h-3 rounded-sm border-2 border-teal-400 bg-slate-800 rotate-45"></div>
+        <div class="w-3 h-3 rounded-sm border-2 border-teal-400 bg-slate-800 rotate-45"></div>
       </div>
     </div>
   </div>
@@ -63,13 +72,13 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const trackClasses = computed(() => {
-  return 'bg-gray-700/50'
+  return 'bg-black/80'
 })
 
 const barClasses = computed(() => {
   const variants = {
     default: 'bg-rose-500',
-    gradient: 'bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400',
+    gradient: 'bg-gradient-to-r from-teal-500 via-emerald-500 to-teal-600',
     success: 'bg-emerald-500',
     warning: 'bg-amber-500',
     danger: 'bg-rose-500'

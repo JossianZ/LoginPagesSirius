@@ -44,31 +44,23 @@
       <!-- Main Content -->
       <div class="flex-1 flex flex-col justify-center max-w-lg">
         <!-- Badge -->
-        <div class="flex items-center gap-2 mb-6">
-          <div class="w-5 h-5 rounded-full bg-teal-500/20 flex items-center justify-center">
-            <svg class="w-3 h-3 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span class="text-teal-400 text-sm font-medium tracking-wide uppercase">
+        <div class="flex items-center gap-2 mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-green-400">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span class="text-green-400 text-sm font-medium tracking-widest uppercase">
             Basitleştirilmiş Operasyonlar
           </span>
         </div>
 
         <!-- Heading -->
-        <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-          Seferi Lojistiği<br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
-            Yönetiyor
-          </span>
+        <h1 class="text-5xl lg:text-6xl font-bold text-white leading-tight mb-8 whitespace-nowrap">
+          Seferi Lojistiği  Yönetiyor
         </h1>
 
         <!-- Description -->
-        <p class="text-gray-400 text-lg leading-relaxed mb-12">
-          Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık lojistik iş akışlarını
-          otomatikleştirerek idari iş yükünü
-          <span class="text-white font-semibold">%65</span>, insan hatasını ise
-          <span class="text-white font-semibold">%92</span> oranında azaltıyor.
+        <p class="text-gray-300 text-base lg:text-lg leading-relaxed mb-16 max-w-2xl">
+          Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık lojistik iş akışlarını otomatikleştirerek idari iş yükünü <span class="text-white font-semibold">%65</span>, insan hatasını ise <span class="text-white font-semibold">%92</span> oranında azaltıyor.
         </p>
 
         <!-- Progress Section -->
