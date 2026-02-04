@@ -1,9 +1,4 @@
 <template>
-  <!-- 
-    SProgressBar.vue
-    İlerleme çubuğu bileşeni.
-    Yüzdelik ilerleme gösterimi için kullanılır.
-  -->
   <div class="s-progress-bar w-full">
     <!-- Label Row -->
     <div v-if="showLabel" class="flex items-center justify-between mb-2 text-sm">

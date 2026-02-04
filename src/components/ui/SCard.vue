@@ -1,9 +1,4 @@
 <template>
-  <!-- 
-    SCard.vue
-    Genel amaçlı kart bileşeni.
-    İçerik gruplarını görsel olarak ayırmak için kullanılır.
-  -->
   <div :class="cardClasses" class="transition-all duration-300">
     <!-- Header -->
     <div v-if="$slots.header" class="card-header">

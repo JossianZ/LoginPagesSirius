@@ -1,10 +1,3 @@
-/**
- * main.ts
- * 
- * Uygulama giriş noktası.
- * Vue, Pinia ve Router yapılandırması.
- */
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import router from './router'

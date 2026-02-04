@@ -1,9 +1,4 @@
 <template>
-  <!-- 
-    SButton.vue
-    Genel amaçlı buton bileşeni.
-    Çeşitli varyantlar ve boyutlar desteklenir.
-  -->
   <button
     :type="type"
     :disabled="disabled || loading"

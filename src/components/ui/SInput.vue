@@ -1,9 +1,4 @@
 <template>
-  <!-- 
-    SInput.vue
-    Genel amaçlı input bileşeni.
-    Text, email, password vb. input türlerini destekler.
-  -->
   <div class="s-input-wrapper w-full">
     <!-- Label -->
     <label
