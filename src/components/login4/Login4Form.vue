@@ -84,8 +84,8 @@
 
                 <!-- Submit Button -->
                 <button type="submit"
-                    class="w-full py-3 bg-cyan-700 hover:bg-cyan-600 rounded-lg text-white font-semibold transition-colors flex items-center justify-center gap-2 hover:scale-[1.02] transition-all duration-200 shadow-[0_0_20px_rgba(6,182,212,0.5)]">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="w-full py-3 bg-gradient-to-r from-blue-600 text-sm to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-lg text-white font-semibold transition-colors flex items-center justify-center gap-2 hover:scale-[1.02] shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
@@ -95,8 +95,8 @@
 
             <!-- Footer -->
             <p class="text-center text-xs text-slate-500 mt-6 whitespace-nowrap">
-                Giriş yaparak <a href="#" class="text-cyan-400 hover:text-cyan-300">Kullanım Koşulları</a> ve
-                <a href="#" class="text-cyan-400 hover:text-cyan-300">Gizlilik Politikası</a>'nı kabul etmiş olursunuz.
+                Giriş yaparak <a href="#" class="text-blue-500 hover:text-blue-400 hover:underline">Kullanım Koşulları</a> ve
+                <a href="#" class="text-blue-500 hover:text-blue-400 hover:underline">Gizlilik Politikası</a>'nı kabul etmiş olursunuz.
             </p>
         </div>
     </div>
