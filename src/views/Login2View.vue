@@ -1,6 +1,6 @@
 <template>
   <AuthLayout>
-    <div :class="['login2-view min-h-screen w-full flex items-center justify-center p-8 relative transition-colors duration-300',
+    <div :class="['login2-view h-screen w-full flex items-center justify-center p-6 relative transition-colors duration-300 overflow-hidden',
       settingsStore.theme === 'dark' ? 'bg-zinc-950' : 'bg-slate-100']">
 
       <!-- Top Right Controls - Fixed position -->
@@ -59,11 +59,11 @@
       </div>
 
       <!-- Centered Container with Grid -->
-      <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[400px_1fr] grid-rows-[1fr_auto] gap-4">
+      <div class="w-full max-w-6xl h-[calc(100vh-3rem)] grid grid-cols-1 lg:grid-cols-[400px_1fr] grid-rows-[1fr_auto] gap-4">
 
         <!-- Left Side - Form (spans 2 rows) -->
         <div
-          :class="['row-span-2 rounded-3xl p-8 lg:p-10 border transition-colors duration-300',
+          :class="['row-span-2 rounded-3xl p-6 border transition-colors duration-300',
             settingsStore.theme === 'dark' ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-zinc-200 shadow-lg']">
           <Login2Form />
         </div>

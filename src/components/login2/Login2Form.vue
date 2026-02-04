@@ -1,19 +1,19 @@
 <template>
     <div class="login2-form h-full flex flex-col">
         <!-- Logo - Only image, no text -->
-        <div class="mb-10">
-            <img :src="lobsterLogo" alt="Lobster Lead" class="h-12 object-contain" />
+        <div class="mb-6">
+            <img :src="lobsterLogo" alt="Lobster Lead" class="h-10 object-contain" />
         </div>
 
         <!-- Header -->
-        <div class="mb-8">
-            <h1 :class="['text-2xl font-bold mb-2', settingsStore.theme === 'dark' ? 'text-white' : 'text-zinc-900']">{{
+        <div class="mb-5">
+            <h1 :class="['text-xl font-bold mb-1', settingsStore.theme === 'dark' ? 'text-white' : 'text-zinc-900']">{{
                 t.login.title }}</h1>
-            <p :class="settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'">{{ t.login.subtitle }}</p>
+            <p :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{ t.login.subtitle }}</p>
         </div>
 
         <!-- Google Button -->
-        <button type="button" :class="['w-full flex items-center justify-center gap-3 px-4 py-3.5 border rounded-xl transition-colors mb-6',
+        <button type="button" :class="['w-full flex items-center justify-center gap-3 px-4 py-2.5 border rounded-xl transition-colors mb-4',
             settingsStore.theme === 'dark'
                 ? 'bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700'
                 : 'bg-zinc-50 border-zinc-300 text-zinc-800 hover:bg-zinc-100']">
@@ -27,25 +27,25 @@
                 <path fill="#EA4335"
                     d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
             </svg>
-            <span class="font-medium">{{ t.login.googleButton }}</span>
+            <span class="font-medium text-sm">{{ t.login.googleButton }}</span>
         </button>
 
         <!-- Divider -->
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-4 mb-4">
             <div :class="['flex-1 h-px', settingsStore.theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300']"></div>
-            <span :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">{{ t.login.or
+            <span :class="['text-xs', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">{{ t.login.or
             }}</span>
             <div :class="['flex-1 h-px', settingsStore.theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300']"></div>
         </div>
 
         <!-- Form -->
-        <form @submit.prevent="handleSubmit" class="space-y-5 flex-1">
+        <form @submit.prevent="handleSubmit" class="space-y-3.5">
             <!-- Email -->
             <div>
                 <label
-                    :class="['block text-sm mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
+                    :class="['block text-xs mb-1.5', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.emailLabel }}</label>
-                <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-3.5 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+                <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-2.5 border rounded-xl text-sm focus:outline-none focus:border-red-500 transition-colors',
                     settingsStore.theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
                         : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
@@ -54,22 +54,22 @@
             <!-- Password -->
             <div>
                 <label
-                    :class="['block text-sm mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
+                    :class="['block text-xs mb-1.5', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.passwordLabel }}</label>
                 <div class="relative">
-                    <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••" :class="['w-full px-4 py-3.5 pr-12 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+                    <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••" :class="['w-full px-4 py-2.5 pr-12 border rounded-xl text-sm focus:outline-none focus:border-red-500 transition-colors',
                         settingsStore.theme === 'dark'
                             ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
                             : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
                     <button type="button" @click="showPassword = !showPassword"
                         :class="['absolute right-4 top-1/2 -translate-y-1/2', settingsStore.theme === 'dark' ? 'text-zinc-500 hover:text-zinc-300' : 'text-zinc-400 hover:text-zinc-600']">
-                        <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg v-if="!showPassword" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
-                        <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg v-else class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                 d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
                         </svg>
@@ -81,39 +81,41 @@
             <div class="flex items-center justify-between">
                 <label class="flex items-center gap-2 cursor-pointer">
                     <input v-model="rememberMe" type="checkbox"
-                        :class="['w-4 h-4 rounded focus:ring-red-500 focus:ring-offset-0',
+                        :class="['w-3.5 h-3.5 rounded focus:ring-red-500 focus:ring-offset-0',
                             settingsStore.theme === 'dark' ? 'border-zinc-600 bg-zinc-800 text-red-500' : 'border-zinc-300 bg-white text-red-500']" />
-                    <span :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
+                    <span :class="['text-xs', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.rememberMe }}</span>
                 </label>
-                <a href="#" class="text-sm text-red-500 hover:text-red-400 transition-colors">
+                <a href="#" class="text-xs text-red-500 hover:text-red-400 transition-colors">
                     {{ t.login.forgotPassword }}
                 </a>
             </div>
 
             <!-- Submit Button -->
             <button type="submit" :disabled="isLoading"
-                class="w-full py-3.5 px-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl transition-colors disabled:opacity-50">
+                class="w-full py-2.5 px-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl transition-all disabled:opacity-50 text-sm shadow-[0_0_20px_rgba(239,68,68,0.5)] hover:shadow-[0_0_30px_rgba(239,68,68,0.7)]">
                 {{ t.login.loginButton }}
             </button>
         </form>
 
         <!-- Create Account -->
-        <div class="mt-8 text-center border-t pt-6"
-            :class="settingsStore.theme === 'dark' ? 'border-zinc-800' : 'border-zinc-200'">
+        <div class="mt-4 text-center">
             <span :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-500']">{{
                 t.login.noAccount }}</span>
             <a href="#"
-                :class="['text-sm font-semibold ml-1 transition-colors underline',
+                :class="['text-sm font-semibold ml-1 transition-colors',
                     settingsStore.theme === 'dark' ? 'text-white hover:text-red-500' : 'text-zinc-900 hover:text-red-500']">{{
                         t.login.createAccount }}</a>
         </div>
 
+        <!-- Spacer -->
+        <div class="flex-1"></div>
+
         <!-- Footer -->
         <div
-            :class="['mt-6 flex items-center justify-between text-xs', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">
+            :class="['flex items-center justify-between text-xs', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">
             <span>{{ t.login.footer.copyright }}</span>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4">
                 <a href="#"
                     :class="['transition-colors', settingsStore.theme === 'dark' ? 'hover:text-zinc-300' : 'hover:text-zinc-600']">{{
                         t.login.footer.privacy }}</a>
