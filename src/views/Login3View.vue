@@ -140,7 +140,7 @@
           <!-- Continue Button -->
           <div class="flex justify-end mb-8">
             <button type="button"
-              class="text-violet-600 hover:text-violet-700 font-medium text-sm flex items-center gap-1 transition-colors">
+              class="text-violet-600 hover:text-violet-700 font-medium text-sm flex items-center gap-1 transition-all duration-300 transform hover:translate-x-3">
               Devam Et
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -159,18 +159,20 @@
           <div class="grid grid-cols-2 gap-3">
             <button type="button" disabled
               class="flex items-center justify-center gap-2 px-4 py-2.5 bg-zinc-100 border border-zinc-200 rounded-lg text-zinc-400 cursor-not-allowed hover:border-violet-400 hover:scale-105 transition-all duration-200">
-              <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12C0 18.627 5.373 24 12 24C18.627 24 24 18.627 24 12C24 5.373 18.627 0 12 0ZM12 2.4C17.353 2.4 21.6 6.647 21.6 12C21.6 17.353 17.353 21.6 12 21.6C6.647 21.6 2.4 17.353 2.4 12C2.4 6.647 6.647 2.4 12 2.4ZM12 5.6C10.651 5.6 9.6 6.651 9.6 8C9.6 9.349 10.651 10.4 12 10.4C13.349 10.4 14.4 9.349 14.4 8C14.4 6.651 13.349 5.6 12 5.6ZM12 16.8C9.6 16.8 7.476 15.328 6.4 13.2C6.4 12 9.6 11.2 12 11.2C14.4 11.2 17.6 12 17.6 13.2C16.524 15.328 14.4 16.8 12 16.8Z"
+                  fill="currentColor"></path>
               </svg>
               <span class="text-sm">Misafir</span>
             </button>
 
             <button type="button" disabled
               class="flex items-center justify-center gap-2 px-4 py-2.5 bg-zinc-100 border border-zinc-200 rounded-lg text-zinc-400 cursor-not-allowed hover:border-violet-400 hover:scale-105 transition-all duration-200">
-              <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22.0002 12C22.0002 6.48 17.5202 2 12.0002 2C6.48016 2 2.00016 6.48 2.00016 12C2.00016 17.52 6.48016 22 12.0002 22C17.5202 22 22.0002 17.52 22.0002 12ZM9.00016 16.2L4.80016 12L6.21016 10.59L9.00016 13.38L15.7902 6.59L17.2002 8L9.00016 16.2Z"
+                  fill="currentColor"></path>
               </svg>
               <span class="text-sm">SSO</span>
             </button>
