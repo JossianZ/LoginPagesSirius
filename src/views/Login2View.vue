@@ -1,6 +1,6 @@
 <template>
   <AuthLayout>
-    <div :class="['login2-view min-h-screen w-full flex items-center justify-center p-8 relative transition-colors duration-300',
+    <div :class="['login2-view min-h-screen w-full flex items-center justify-center p-8 relative transition-colors duration-300 font-jakarta',
       settingsStore.theme === 'dark' ? 'bg-zinc-950' : 'bg-slate-100']">
 
       <!-- Top Right Controls - Fixed position -->

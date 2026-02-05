@@ -93,7 +93,7 @@
 
             <!-- Submit Button -->
             <button type="submit" :disabled="isLoading"
-                class="w-full py-3 px-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 text-base shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:shadow-primary/30 active:scale-[0.98] ">
+                class="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 text-base shadow-lg shadow-primary/20 transition-all shadow-lg shadow-red-500/25 hover:shadow-red-500/40 duration-300">
                 {{ t.login.loginButton }}
             </button>
 
