@@ -44,8 +44,10 @@
                 <!-- Lobster Lead Box -->
                 <div class="flex flex-col items-center animate-float group" style="animation-delay: 0.2s;" @mouseenter="handleLogoHover">
                     <div
-                        :class="['w-20 h-20 rounded-xl border-2 border-red-500/40 flex items-center justify-center shadow-xl transition-all duration-300 hover:shadow-red-500/50 cursor-pointer animate-pulse-glow-red-border group-hover:scale-110 relative',
+                        :class="['w-20 h-20 rounded-xl border-2 border-red-500/40 flex items-center justify-center shadow-xl transition-all duration-300 hover:shadow-red-500/50 cursor-pointer animate-pulse-glow-red-border group-hover:scale-110 relative overflow-hidden',
                             settingsStore.theme === 'dark' ? 'bg-slate-800 shadow-slate-900/40' : 'bg-slate-100 shadow-slate-200/40']">
+                        <!-- Shine effect -->
+                        <div class="absolute inset-0 -translate-x-full animate-shine bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                         <!-- Rotating Dotted Rectangle -->
                         <div class="absolute inset-1 border-2 border-dashed border-red-500/20 rounded-lg animate-spin-slow"></div>
                         <img :src="lobsterSmallLogo" alt="Lobster Lead" :class="['w-12 h-12 object-contain relative z-10', { 'animate-shake': isShaking }]" />
@@ -299,6 +301,15 @@ const handleLogoHover = () => {
   }
 }
 
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -344,5 +355,9 @@ const handleLogoHover = () => {
 
 .animate-spin-slow {
   animation: spin-slow 15s linear infinite;
+}
+
+.animate-shine {
+  animation: shine 3s ease-in-out infinite;
 }
 </style>
