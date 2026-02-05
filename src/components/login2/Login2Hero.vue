@@ -70,9 +70,11 @@
                 <div class="flex flex-col gap-1.5">
                     <!-- Sosyal Medya - Purple -->
                     <div
-                        :class="['px-2.5 py-1.5 rounded-lg border text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer group',
-                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 text-slate-300' : 'bg-slate-100 border-slate-300 text-slate-700 shadow-sm']"
+                        :class="['px-2.5 py-1.5 rounded-lg border-2 text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 cursor-pointer group relative overflow-visible',
+                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 group-hover:border-purple-500/30 text-slate-300' : 'bg-slate-100 border-slate-300 group-hover:border-purple-500/30 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.3s;">
+                        <!-- Animated border on hover -->
+                        <div class="absolute rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse-border pointer-events-none border-2 border-purple-500" style="inset: -1px;"></div>
                         <div class="w-6 h-6 rounded-lg bg-purple-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
                             <svg class="w-3.5 h-3.5 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -84,9 +86,11 @@
                     </div>
                     <!-- Blog - Red -->
                     <div
-                        :class="['px-2.5 py-1.5 rounded-lg border text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/50 cursor-pointer group',
-                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 text-slate-300' : 'bg-slate-100 border-slate-300 text-slate-700 shadow-sm']"
+                        :class="['px-2.5 py-1.5 rounded-lg border-2 text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 cursor-pointer group relative overflow-visible',
+                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 group-hover:border-red-500/30 text-slate-300' : 'bg-slate-100 border-slate-300 group-hover:border-red-500/30 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.4s;">
+                        <!-- Animated border on hover -->
+                        <div class="absolute rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse-border pointer-events-none border-2 border-red-500" style="inset: -1px;"></div>
                         <div class="w-6 h-6 rounded-lg bg-red-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
                             <svg class="w-3.5 h-3.5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -98,9 +102,11 @@
                     </div>
                     <!-- E-posta - Green -->
                     <div
-                        :class="['px-2.5 py-1.5 rounded-lg border text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/50 cursor-pointer group',
-                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 text-slate-300' : 'bg-slate-100 border-slate-300 text-slate-700 shadow-sm']"
+                        :class="['px-2.5 py-1.5 rounded-lg border-2 text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 cursor-pointer group relative overflow-visible',
+                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 group-hover:border-green-500/30 text-slate-300' : 'bg-slate-100 border-slate-300 group-hover:border-green-500/30 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.5s;">
+                        <!-- Animated border on hover -->
+                        <div class="absolute rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse-border pointer-events-none border-2 border-green-500" style="inset: -1px;"></div>
                         <div class="w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
                             <svg class="w-3.5 h-3.5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -282,6 +288,17 @@ const handleLogoHover = () => {
   }
 }
 
+@keyframes pulse-border {
+  0%, 100% {
+    inset: -1px;
+    opacity: 0.6;
+  }
+  50% {
+    inset: -3px;
+    opacity: 0.9;
+  }
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -301,6 +318,10 @@ const handleLogoHover = () => {
 
 .group:hover .group-hover\:animate-pulse-hover {
   animation: pulse-hover 0.5s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:animate-pulse-border {
+  animation: pulse-border 0.8s ease-in-out infinite;
 }
 
 .animate-pulse-scale-glow-purple {
