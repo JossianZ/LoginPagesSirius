@@ -2,7 +2,7 @@
     <div class="login2-form h-full flex flex-col">
         <!-- Logo -->
         <div class="mb-6">
-            <img :src="lobsterLogo" alt="Lobster Lead" class="h-10 object-contain" />
+            <img :src="lobsterLogo" alt="Lobster Lead" class="h-12 object-contain" />
         </div>
 
         <!-- Header -->
@@ -93,7 +93,7 @@
 
             <!-- Submit Button -->
             <button type="submit" :disabled="isLoading"
-                class="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 text-base shadow-lg shadow-primary/20 transition-all shadow-lg shadow-red-500/25 hover:shadow-red-500/40 duration-300">
+                class="w-full py-2 px-4 bg-red-500 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 text-base shadow-lg shadow-primary/20 transition-all shadow-lg shadow-red-500/25 hover:shadow-red-500/40 duration-300">
                 {{ t.login.loginButton }}
             </button>
 
