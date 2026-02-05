@@ -12,7 +12,8 @@
         <div class="flex-1 flex items-center justify-center" @mousemove="handleMouseMove" @mouseleave="resetPosition">
             <div class="flex items-center gap-4 transition-transform duration-500 ease-out" :style="{ transform: `translate(${offsetX}px, ${offsetY}px)` }">
                 <!-- Brand Box -->
-                <div class="flex flex-col items-center animate-float">
+                <div class="flex flex-col items-center animate-float transition-all duration-300" 
+                     :class="showBrand ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <div
                         :class="['w-16 h-16 rounded-xl border-2 flex items-center justify-center transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer',
                             settingsStore.theme === 'dark' ? 'bg-zinc-800 border-zinc-700' : 'bg-zinc-100 border-zinc-300']">
@@ -32,7 +33,8 @@
                 </div>
 
                 <!-- Arrow 1 - Purple -->
-                <div class="relative">
+                <div class="relative transition-all duration-300" 
+                     :class="showArrow1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <svg class="w-6 h-6 text-purple-500 animate-arrow-forward" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -42,7 +44,10 @@
                 </div>
 
                 <!-- Lobster Lead Box -->
-                <div class="flex flex-col items-center animate-float group" style="animation-delay: 0.2s;" @mouseenter="handleLogoHover">
+                <div class="flex flex-col items-center animate-float group transition-all duration-300" 
+                     style="animation-delay: 0.2s;" 
+                     @mouseenter="handleLogoHover"
+                     :class="showLobster ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <div
                         :class="['w-20 h-20 rounded-xl border-2 border-red-500/40 flex items-center justify-center shadow-xl transition-all duration-300 hover:shadow-red-500/50 cursor-pointer animate-pulse-glow-red-border group-hover:scale-110 relative overflow-hidden',
                             settingsStore.theme === 'dark' ? 'bg-slate-800 shadow-slate-900/40' : 'bg-slate-100 shadow-slate-200/40']">
@@ -59,7 +64,8 @@
                 </div>
 
                 <!-- Arrow 2 - Red -->
-                <div class="relative">
+                <div class="relative transition-all duration-300" 
+                     :class="showArrow2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <svg class="w-6 h-6 text-red-500 animate-arrow-forward" style="animation-delay: 0.1s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -69,7 +75,8 @@
                 </div>
 
                 <!-- Output Options -->
-                <div class="flex flex-col gap-1.5">
+                <div class="flex flex-col gap-1.5 transition-all duration-300" 
+                     :class="showOutputs ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <!-- Sosyal Medya - Purple -->
                     <div
                         :class="['px-2.5 py-1.5 rounded-lg border-2 text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 cursor-pointer group relative overflow-visible',
@@ -139,7 +146,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useSettingsStore } from '@/stores'
 import { useTranslations } from '@/i18n'
 import lobsterSmallLogo from '@/assets/lobstersmalllogo.png'
@@ -150,6 +157,22 @@ const t = computed(() => useTranslations(settingsStore.language))
 const offsetX = ref(0)
 const offsetY = ref(0)
 const isShaking = ref(false)
+
+// Animation sequence states
+const showBrand = ref(false)
+const showArrow1 = ref(false)
+const showLobster = ref(false)
+const showArrow2 = ref(false)
+const showOutputs = ref(false)
+
+// Start animation sequence on mount
+onMounted(() => {
+    setTimeout(() => showBrand.value = true, 100)
+    setTimeout(() => showArrow1.value = true, 250)
+    setTimeout(() => showLobster.value = true, 400)
+    setTimeout(() => showArrow2.value = true, 550)
+    setTimeout(() => showOutputs.value = true, 700)
+})
 
 const handleMouseMove = (event: MouseEvent) => {
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect()

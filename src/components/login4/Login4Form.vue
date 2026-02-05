@@ -1,6 +1,6 @@
 <template>
     <div class="login4-form h-full flex flex-col items-center justify-center p-8 lg:p-12 bg-[#0c1a2e]">
-        <div class="w-full max-w-sm">
+        <div class="w-full max-w-md">
             <!-- Header -->
             <div class="mb-8 text-center">
                 <h1 class="text-2xl font-bold text-white mb-2">Hoş Geldiniz</h1>
@@ -20,7 +20,7 @@
                             </svg>
                         </div>
                         <input v-model="email" type="email" required placeholder="ornek@sirket.com"
-                            class="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/40 transition-colors" />
+                            class="w-full pl-12 pr-4 py-3.5 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/40 transition-colors" />
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@
                             </svg>
                         </div>
                         <input v-model="password" :type="showPassword ? 'text' : 'password'" required placeholder="••••••••"
-                            class="w-full pl-12 pr-12 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/40 transition-colors" />
+                            class="w-full pl-12 pr-12 py-3.5 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/40 transition-colors" />
                         <button type="button" @click="showPassword = !showPassword"
                             class="absolute inset-y-0 right-0 px-4 text-slate-500 hover:text-white transition-colors hover:bg-blue-900 rounded-r-lg flex items-center justify-center">
                             <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor"
@@ -77,7 +77,7 @@
                             </svg>
                         </div>
                         <input v-model="domain" type="text" placeholder="sirket-adi"
-                            class="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/40 transition-colors" />
+                            class="w-full pl-12 pr-4 py-3.5 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/40 transition-colors" />
                     </div>
                     <p class="text-xs text-slate-500 mt-1.5">Organizasyonunuzun benzersiz domain adı</p>
                 </div>
