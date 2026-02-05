@@ -2,7 +2,11 @@
     <div class="login2-form h-full flex flex-col">
         <!-- Logo -->
         <div class="mb-6">
+<<<<<<< HEAD
             <img :src="lobsterLogo" alt="Lobster Lead" class="h-12 object-contain" />
+=======
+            <img :src="lobsterLogo" alt="Lobster Lead" class="h-10 object-contain" />
+>>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
         </div>
 
         <!-- Header -->
@@ -39,13 +43,21 @@
         </div>
 
         <!-- Form -->
+<<<<<<< HEAD
         <form @submit="handleSubmit" class="space-y-4 flex-1 flex flex-col">
+=======
+        <form @submit.prevent="handleSubmit" class="space-y-4 flex-1 flex flex-col">
+>>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
             <!-- Email -->
             <div>
                 <label
                     :class="['block text-sm font-medium mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.emailLabel }}</label>
+<<<<<<< HEAD
                 <input v-model="email" type="email" required :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-3 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+=======
+                <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-3 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+>>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
                     settingsStore.theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
                         : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
@@ -57,7 +69,11 @@
                     :class="['block text-sm font-medium mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.passwordLabel }}</label>
                 <div class="relative">
+<<<<<<< HEAD
                     <input v-model="password" :type="showPassword ? 'text' : 'password'" required placeholder="••••••••" :class="['w-full px-4 py-3 pr-12 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+=======
+                    <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••" :class="['w-full px-4 py-3 pr-12 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+>>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
                         settingsStore.theme === 'dark'
                             ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
                             : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
@@ -93,7 +109,11 @@
 
             <!-- Submit Button -->
             <button type="submit" :disabled="isLoading"
+<<<<<<< HEAD
                 class="w-full py-2 px-4 bg-red-500 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 text-base shadow-lg shadow-primary/20 transition-all shadow-lg shadow-red-500/25 hover:shadow-red-500/40 duration-300">
+=======
+                class="w-full py-3 px-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 text-base shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:shadow-primary/30 active:scale-[0.98] ">
+>>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
                 {{ t.login.loginButton }}
             </button>
 
