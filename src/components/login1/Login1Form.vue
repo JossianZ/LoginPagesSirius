@@ -32,14 +32,14 @@
         </div>
 
         <!-- Form -->
-        <form @submit.prevent="handleSubmit" class="space-y-6">
+        <form @submit="handleSubmit" class="space-y-6">
           <!-- Username Label -->
           <div class="text-sm font-medium text-gray-700 mb-2">
             Kullanıcı Adı
           </div>
 
           <!-- Username Input -->
-          <SInput v-model="username" type="text" placeholder="Enter your username" size="md" :error="error"
+          <SInput v-model="username" type="text" required placeholder="Enter your username" size="md" :error="error"
             autocomplete="username" :hasLeftIcon="true">
             <template #iconLeft>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,8 @@ const username = ref('')
 const error = ref('')
 const isLoading = ref(false)
 
-const handleSubmit = async () => {
+const handleSubmit = async (event: Event) => {
+  event.preventDefault()
   if (!username.value.trim()) {
     error.value = 'Kullanıcı adı gereklidir'
     return

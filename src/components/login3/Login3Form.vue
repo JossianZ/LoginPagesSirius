@@ -9,7 +9,7 @@
         </div>
 
         <!-- Form -->
-        <form @submit.prevent="handleSubmit" class="space-y-6 flex-1">
+        <form @submit="handleSubmit" class="space-y-6 flex-1">
             <!-- Email -->
             <div>
                 <label class="block text-sm text-zinc-600 mb-2">E-posta Adresi</label>
@@ -20,15 +20,18 @@
                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <input v-model="email" type="email" placeholder="E-posta adresinizi girin"
-                        class="w-full pl-12 pr-4 py-3.5 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all" />
+                    <input v-model="email" type="email" required placeholder="E-posta adresinizi girin"
+                        @input="error = ''"
+                        :class="['w-full pl-12 pr-4 py-3.5 bg-zinc-50 border rounded-xl text-zinc-900 placeholder-zinc-400 focus:outline-none transition-all',
+                            error ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20' : 'border-zinc-200 focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20']" />
                 </div>
+                <p v-if="error" class="mt-2 text-sm text-red-500">{{ error }}</p>
             </div>
 
             <!-- Submit Button -->
             <div class="flex justify-end">
-                <button type="button" @click="handleContinue"
-                    class="text-violet-600 hover:text-violet-700 font-medium text-sm flex items-center gap-1 transition-colors">
+                <button type="submit"
+                    class="bg-transparent border-0 p-0 text-violet-600 hover:text-violet-700 font-medium text-sm flex items-center gap-1 transition-colors cursor-pointer">
                     Devam Et
                     <svg class="w-2 h-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -74,14 +77,28 @@
 import { ref } from 'vue'
 
 const email = ref('')
+const error = ref('')
 
-const handleSubmit = () => {
-    console.log('Form submitted:', email.value)
-}
-
-const handleContinue = () => {
-    if (email.value) {
-        console.log('Continue with:', email.value)
+const handleSubmit = (event: Event) => {
+    console.log('handleSubmit called')
+    event.preventDefault()
+    console.log('Email value:', email.value)
+    
+    if (!email.value.trim()) {
+        console.log('Email is empty')
+        error.value = 'E-posta adresi gereklidir'
+        return
     }
+    
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email.value)) {
+        console.log('Email format invalid')
+        error.value = 'Geçerli bir e-posta adresi girin'
+        return
+    }
+    
+    error.value = ''
+    console.log('Form submitted:', email.value)
 }
 </script>

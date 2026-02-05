@@ -39,13 +39,13 @@
         </div>
 
         <!-- Form -->
-        <form @submit.prevent="handleSubmit" class="space-y-4 flex-1 flex flex-col">
+        <form @submit="handleSubmit" class="space-y-4 flex-1 flex flex-col">
             <!-- Email -->
             <div>
                 <label
                     :class="['block text-sm font-medium mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.emailLabel }}</label>
-                <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-3 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+                <input v-model="email" type="email" required :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-3 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
                     settingsStore.theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
                         : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
@@ -57,7 +57,7 @@
                     :class="['block text-sm font-medium mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.passwordLabel }}</label>
                 <div class="relative">
-                    <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••" :class="['w-full px-4 py-3 pr-12 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+                    <input v-model="password" :type="showPassword ? 'text' : 'password'" required placeholder="••••••••" :class="['w-full px-4 py-3 pr-12 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
                         settingsStore.theme === 'dark'
                             ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
                             : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
@@ -147,7 +147,8 @@ const rememberMe = ref(false)
 const showPassword = ref(false)
 const isLoading = ref(false)
 
-const handleSubmit = async () => {
+const handleSubmit = async (event: Event) => {
+    event.preventDefault()
     if (!email.value || !password.value) return
     isLoading.value = true
     await new Promise(resolve => setTimeout(resolve, 1500))

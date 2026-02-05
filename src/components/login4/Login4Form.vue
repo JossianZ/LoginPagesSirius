@@ -8,7 +8,7 @@
             </div>
 
             <!-- Form -->
-            <form @submit.prevent="handleSubmit" class="space-y-5">
+            <form @submit="handleSubmit" class="space-y-5">
                 <!-- Email -->
                 <div>
                     <label class="block text-sm text-slate-300 mb-2">Email Adresi</label>
@@ -19,7 +19,7 @@
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                         </div>
-                        <input v-model="email" type="email" placeholder="ornek@sirket.com"
+                        <input v-model="email" type="email" required placeholder="ornek@sirket.com"
                             class="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/40 transition-colors" />
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                                     d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                             </svg>
                         </div>
-                        <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••"
+                        <input v-model="password" :type="showPassword ? 'text' : 'password'" required placeholder="••••••••"
                             class="w-full pl-12 pr-12 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/40 transition-colors" />
                         <button type="button" @click="showPassword = !showPassword"
                             class="absolute inset-y-0 right-0 px-4 text-slate-500 hover:text-white transition-colors hover:bg-blue-900 rounded-r-lg flex items-center justify-center">
@@ -110,7 +110,8 @@ const password = ref('')
 const domain = ref('')
 const showPassword = ref(false)
 
-const handleSubmit = () => {
+const handleSubmit = (event: Event) => {
+    event.preventDefault()
     console.log('Login submitted:', { email: email.value, domain: domain.value })
 }
 </script>
