@@ -32,10 +32,14 @@
                 </div>
 
                 <!-- Arrow 1 - Purple -->
-                <svg class="w-6 h-6 text-purple-500 animate-arrow-forward" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <div class="relative">
+                    <svg class="w-6 h-6 text-purple-500 animate-arrow-forward" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                    <!-- Animated dot -->
+                    <div class="absolute top-1/2 -translate-y-1/2 left-0 w-1 h-1 rounded-full bg-purple-500 animate-dot-travel shadow-[0_0_6px_rgba(168,85,247,0.8)]"></div>
+                </div>
 
                 <!-- Lobster Lead Box -->
                 <div class="flex flex-col items-center animate-float group" style="animation-delay: 0.2s;" @mouseenter="handleLogoHover">
@@ -53,20 +57,24 @@
                 </div>
 
                 <!-- Arrow 2 - Red -->
-                <svg class="w-6 h-6 text-red-500 animate-arrow-forward" style="animation-delay: 0.1s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <div class="relative">
+                    <svg class="w-6 h-6 text-red-500 animate-arrow-forward" style="animation-delay: 0.1s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                    <!-- Animated dot -->
+                    <div class="absolute top-1/2 -translate-y-1/2 left-0 w-1 h-1 rounded-full bg-red-500 animate-dot-travel shadow-[0_0_6px_rgba(239,68,68,0.8)]" style="animation-delay: 0.5s;"></div>
+                </div>
 
                 <!-- Output Options -->
                 <div class="flex flex-col gap-1.5">
                     <!-- Sosyal Medya - Purple -->
                     <div
-                        :class="['px-2.5 py-1.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer group',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
+                        :class="['px-2.5 py-1.5 rounded-lg border text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer group',
+                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 text-slate-300' : 'bg-slate-100 border-slate-300 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.3s;">
-                        <div class="w-7 h-7 rounded-lg bg-purple-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
-                            <svg class="w-3.5 h-3.5 text-purple-500 group-hover:animate-pulse-hover" fill="currentColor" viewBox="0 0 24 24">
+                        <div class="w-6 h-6 rounded-lg bg-purple-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
+                            <svg class="w-3.5 h-3.5 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z" />
                             </svg>
@@ -76,11 +84,11 @@
                     </div>
                     <!-- Blog - Red -->
                     <div
-                        :class="['px-2.5 py-1.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/50 cursor-pointer group',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
+                        :class="['px-2.5 py-1.5 rounded-lg border text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/50 cursor-pointer group',
+                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 text-slate-300' : 'bg-slate-100 border-slate-300 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.4s;">
-                        <div class="w-7 h-7 rounded-lg bg-red-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
-                            <svg class="w-3.5 h-3.5 text-red-500 group-hover:animate-pulse-hover" fill="currentColor" viewBox="0 0 24 24">
+                        <div class="w-6 h-6 rounded-lg bg-red-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
+                            <svg class="w-3.5 h-3.5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
                             </svg>
@@ -90,11 +98,11 @@
                     </div>
                     <!-- E-posta - Green -->
                     <div
-                        :class="['px-2.5 py-1.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/50 cursor-pointer group',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
+                        :class="['px-2.5 py-1.5 rounded-lg border text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/50 cursor-pointer group',
+                            settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 text-slate-300' : 'bg-slate-100 border-slate-300 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.5s;">
-                        <div class="w-7 h-7 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
-                            <svg class="w-3.5 h-3.5 text-green-500 group-hover:animate-pulse-hover" fill="currentColor" viewBox="0 0 24 24">
+                        <div class="w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
+                            <svg class="w-3.5 h-3.5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                             </svg>
@@ -179,6 +187,23 @@ const handleLogoHover = () => {
   }
 }
 
+@keyframes dot-travel {
+  0% {
+    left: 50%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
+}
+
 @keyframes shake {
   0%, 100% {
     transform: rotate(0deg);
@@ -253,7 +278,7 @@ const handleLogoHover = () => {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 
@@ -265,13 +290,17 @@ const handleLogoHover = () => {
   animation: arrow-forward 2s ease-in-out infinite;
 }
 
+.animate-dot-travel {
+  animation: dot-travel 1s linear infinite;
+}
+
 .animate-shake {
   position: relative;
   animation: shake 0.5s ease-in-out;
 }
 
-.animate-pulse-hover {
-  animation: pulse-hover 0.8s ease-in-out infinite;
+.group:hover .group-hover\:animate-pulse-hover {
+  animation: pulse-hover 0.5s ease-in-out infinite;
 }
 
 .animate-pulse-scale-glow-purple {

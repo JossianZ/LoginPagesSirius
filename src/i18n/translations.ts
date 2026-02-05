@@ -67,7 +67,7 @@ export const translations: Record<'tr' | 'en', TranslationSchema> = {
             }
         },
         hero: {
-            version: 'v2.0 Yayında',
+            version: 'v2.0 Yayinda',
             badge: {
                 brand: 'Marka',
                 aiAssistant: 'AI Destekli',
@@ -75,7 +75,7 @@ export const translations: Record<'tr' | 'en', TranslationSchema> = {
                 blog: 'Blog',
                 email: 'E-posta'
             },
-            title: 'İçerik üretiminin',
+            title: 'Icerik üretiminin',
             titleHighlight: 'yeni standardı.',
             description: 'Yapay zeka ile saniyeler içinde SEO uyumlu blog yazıları ve sosyal medya içerikleri oluşturun.',
             features: {
