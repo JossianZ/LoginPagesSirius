@@ -4,8 +4,23 @@
       <!-- Left Side - Hero with Purple Gradient -->
       <div
         class="hidden lg:block lg:w-[60%] bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 relative overflow-hidden h-screen">
-        <!-- Background Circle Decoration -->
+        <!-- Background Decorations -->
+        <!-- Main Circle -->
         <div class="absolute top-8 left-8 w-48 h-48 rounded-full border border-white/20 bg-white/5"></div>
+        
+        <!-- Additional Circles -->
+        <div class="absolute bottom-12 right-12 w-32 h-32 rounded-full border border-white/15 bg-white/5"></div>
+        <div class="absolute top-1/3 right-16 w-24 h-24 rounded-full border border-white/10"></div>
+        
+        <!-- Floating Dots -->
+        <div class="absolute top-20 right-1/4 w-3 h-3 bg-white/30 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-2 h-2 bg-white/40 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+        <div class="absolute top-1/2 right-1/3 w-2.5 h-2.5 bg-white/25 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-1/3 right-1/5 w-2 h-2 bg-white/35 rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
+        
+        <!-- Gradient Blobs -->
+        <div class="absolute top-1/4 left-1/3 w-64 h-64 bg-purple-400/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-56 h-56 bg-indigo-400/10 rounded-full blur-3xl"></div>
 
         <!-- Content Container -->
         <div class="h-full flex flex-col items-center justify-center p-10 overflow-hidden">
