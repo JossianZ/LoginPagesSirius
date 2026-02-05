@@ -2,8 +2,8 @@
     <div class="login3-form h-full flex flex-col">
         <!-- Header -->
         <div class="mb-10 text-center">
-            <h1 class="text-3xl font-bold text-zinc-900 mb-2">
-                Hoş<span class="text-violet-600">geldiniz</span>
+            <h1 class="text-3xl font-bold text-zinc-900 mb-2 font-space-grotesk">
+                Hoş<span class="text-[#4000F0]">geldiniz</span>
             </h1>
             <p class="text-zinc-500">İşletmenizin AI destekli asistanına giriş yapın</p>
         </div>
