@@ -9,12 +9,12 @@
         </div>
 
         <!-- Workflow Diagram - Centered -->
-        <div class="flex-1 flex items-center justify-center">
-            <div class="flex items-center gap-6">
+        <div class="flex-1 flex items-center justify-center" @mousemove="handleMouseMove" @mouseleave="resetPosition">
+            <div class="flex items-center gap-6 transition-transform duration-500 ease-out" :style="{ transform: `translate(${offsetX}px, ${offsetY}px)` }">
                 <!-- Brand Box -->
                 <div class="flex flex-col items-center animate-float">
                     <div
-                        :class="['w-20 h-20 rounded-2xl border-2 flex items-center justify-center transition-all duration-300 hover:border-purple-500 cursor-pointer',
+                        :class="['w-20 h-20 rounded-2xl border-2 flex items-center justify-center transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer',
                             settingsStore.theme === 'dark' ? 'bg-zinc-800 border-zinc-700' : 'bg-zinc-100 border-zinc-300']">
                         <svg :class="['w-9 h-9', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500']"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -40,7 +40,7 @@
                 <!-- Lobster Lead Box -->
                 <div class="flex flex-col items-center animate-float" style="animation-delay: 0.2s;">
                     <div
-                        :class="['w-24 h-24 rounded-2xl border-2 flex items-center justify-center shadow-xl transition-all duration-300 hover:border-red-500 cursor-pointer',
+                        :class="['w-24 h-24 rounded-2xl border-2 flex items-center justify-center shadow-xl transition-all duration-300 hover:border-red-500 hover:shadow-red-500/50 cursor-pointer',
                             settingsStore.theme === 'dark' ? 'bg-slate-800 border-slate-700 shadow-slate-900/40' : 'bg-slate-100 border-slate-300 shadow-slate-200/40']">
                         <img :src="lobsterSmallLogo" alt="Lobster Lead" class="w-16 h-16 object-contain" />
                     </div>
@@ -60,7 +60,7 @@
                 <div class="flex flex-col gap-2.5">
                     <!-- Sosyal Medya - Purple -->
                     <div
-                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-purple-500 cursor-pointer',
+                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer',
                             settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
                         style="animation-delay: 0.3s;">
                         <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
@@ -74,7 +74,7 @@
                     </div>
                     <!-- Blog - Red -->
                     <div
-                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-red-500 cursor-pointer',
+                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/50 cursor-pointer',
                             settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
                         style="animation-delay: 0.4s;">
                         <div class="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
@@ -88,7 +88,7 @@
                     </div>
                     <!-- E-posta - Green -->
                     <div
-                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-green-500 cursor-pointer',
+                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/50 cursor-pointer',
                             settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
                         style="animation-delay: 0.5s;">
                         <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
@@ -121,13 +121,33 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useSettingsStore } from '@/stores'
 import { useTranslations } from '@/i18n'
 import lobsterSmallLogo from '@/assets/lobstersmalllogo.png'
 
 const settingsStore = useSettingsStore()
 const t = computed(() => useTranslations(settingsStore.language))
+
+const offsetX = ref(0)
+const offsetY = ref(0)
+
+const handleMouseMove = (event: MouseEvent) => {
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect()
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+    const mouseX = event.clientX - rect.left
+    const mouseY = event.clientY - rect.top
+    
+    // Calculate offset based on mouse position (max 8px movement for smoother effect)
+    offsetX.value = ((mouseX - centerX) / centerX) * 8
+    offsetY.value = ((mouseY - centerY) / centerY) * 8
+}
+
+const resetPosition = () => {
+    offsetX.value = 0
+    offsetY.value = 0
+}
 </script>
 
 <style scoped>
