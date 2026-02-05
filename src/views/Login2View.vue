@@ -59,17 +59,17 @@
       </div>
 
       <!-- Centered Container with Grid -->
-      <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[400px_1fr] grid-rows-[1fr_auto] gap-4">
+      <div class="w-full max-w-[1375px] grid grid-cols-1 lg:grid-cols-[570px_1fr] grid-rows-[468px_233px] gap-4">
 
-        <!-- Left Side - Form (spans 2 rows) -->
+        <!-- Left Side - Form (spans 2 rows) - 570x729 -->
         <div
-          :class="['row-span-2 rounded-3xl p-8 lg:p-10 border transition-colors duration-300',
+          :class="['row-span-2 h-[729px] rounded-3xl p-8 lg:p-10 border transition-colors duration-300',
             settingsStore.theme === 'dark' ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-zinc-200 shadow-lg']">
           <Login2Form />
         </div>
 
-        <!-- Right Top - Hero Section -->
-        <div :class="['hidden lg:block rounded-3xl p-8 border transition-colors duration-300',
+        <!-- Right Top - Hero Section - 805x468 -->
+        <div :class="['hidden lg:block w-[805px] h-[468px] rounded-3xl p-8 border transition-colors duration-300',
           settingsStore.theme === 'dark'
             ? 'bg-gradient-to-br from-zinc-900 via-rose-950/30 to-zinc-900 border-zinc-800'
             : 'bg-gradient-to-br from-white via-rose-50/50 to-white border-zinc-200 shadow-lg']">
@@ -77,10 +77,10 @@
         </div>
 
         <!-- Right Bottom - 2 Feature Cards (separate) -->
-        <div class="hidden lg:grid grid-cols-2 gap-4">
-          <!-- AI Assistant Card - hover red border -->
+        <div class="hidden lg:grid grid-cols-[330px_449px] gap-4">
+          <!-- AI Assistant Card - 330x233 -->
           <div
-            :class="['p-6 rounded-2xl border hover:border-red-500 transition-colors cursor-pointer',
+            :class="['w-[330px] h-[233px] p-6 rounded-2xl border hover:border-red-500 transition-colors cursor-pointer',
               settingsStore.theme === 'dark' ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-zinc-200 shadow-lg']">
             <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
               <img :src="lobsterSmallLogo" alt="Lobster Lead" class="w-6 h-6 object-contain" />
@@ -92,9 +92,9 @@
               t.hero.features.aiAssistant.description }}</p>
           </div>
 
-          <!-- Happy Users Card - hover purple/blue gradient border -->
+          <!-- Happy Users Card - 449x233 -->
           <div
-            :class="['p-6 rounded-2xl border hover:border-violet-500 transition-colors cursor-pointer',
+            :class="['w-[449px] h-[233px] p-6 rounded-2xl border hover:border-violet-500 transition-colors cursor-pointer',
               settingsStore.theme === 'dark' ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-zinc-200 shadow-lg']">
             <div class="flex items-center mb-4">
               <span

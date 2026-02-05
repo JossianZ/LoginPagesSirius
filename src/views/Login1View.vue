@@ -2,12 +2,12 @@
   <AuthLayout>
     <div class="login1-view min-h-screen w-full flex flex-row">
       <!-- Left Side - Hero Section -->
-      <div class="hidden lg:block lg:w-1/2 xl:w-3/5 min-h-screen">
+      <div class="flex-1 min-h-screen">
         <Login1Hero />
       </div>
 
+      <div class="w-[600px] min-h-screen flex-shrink-0">
       <!-- Right Side - Form Section -->
-      <div class="w-full lg:w-1/2 xl:w-2/5 min-h-screen">
         <Login1Form />
       </div>
     </div>
