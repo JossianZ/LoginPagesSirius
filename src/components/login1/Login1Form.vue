@@ -3,7 +3,7 @@
     <!-- AI Agent Badge (Top Right) -->
     <div class="flex justify-end p-6">
       <div
-        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-100">
+        class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200">
         <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
         <span class="text-xs font-medium text-gray-600">AI Agent Active</span>
       </div>
