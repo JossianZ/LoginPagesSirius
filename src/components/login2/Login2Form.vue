@@ -1,14 +1,19 @@
 <template>
-    <div class="login2-form h-full flex flex-col justify-between py-8">
-        <!-- Header -->
+    <div class="login2-form h-full flex flex-col">
+        <!-- Logo -->
         <div class="mb-6">
-            <h1 :class="['text-3xl font-bold mb-3', settingsStore.theme === 'dark' ? 'text-white' : 'text-zinc-900']">{{
+            <img :src="lobsterLogo" alt="Lobster Lead" class="h-10 object-contain" />
+        </div>
+
+        <!-- Header -->
+        <div class="mb-5">
+            <h1 :class="['text-3xl font-bold mb-2', settingsStore.theme === 'dark' ? 'text-white' : 'text-zinc-900']">{{
                 t.login.title }}</h1>
             <p :class="['text-base', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{ t.login.subtitle }}</p>
         </div>
 
         <!-- Google Button -->
-        <button type="button" :class="['w-full flex items-center justify-center gap-3 px-4 py-4 border rounded-xl transition-colors mb-8',
+        <button type="button" :class="['w-full flex items-center justify-center gap-3 px-4 py-3 border rounded-xl transition-colors mb-5',
             settingsStore.theme === 'dark'
                 ? 'bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700'
                 : 'bg-zinc-50 border-zinc-300 text-zinc-800 hover:bg-zinc-100']">
@@ -26,7 +31,7 @@
         </button>
 
         <!-- Divider -->
-        <div class="flex items-center gap-4 mb-8">
+        <div class="flex items-center gap-4 mb-5">
             <div :class="['flex-1 h-px', settingsStore.theme === 'dark' ? 'bg-zinc-700' : 'bg-zinc-300']"></div>
             <span :class="['text-sm font-medium', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">{{ t.login.or
             }}</span>
@@ -34,13 +39,13 @@
         </div>
 
         <!-- Form -->
-        <form @submit.prevent="handleSubmit" class="space-y-6 flex-1">
+        <form @submit.prevent="handleSubmit" class="space-y-4 flex-1 flex flex-col">
             <!-- Email -->
             <div>
                 <label
                     :class="['block text-sm font-medium mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.emailLabel }}</label>
-                <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-4 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+                <input v-model="email" type="email" :placeholder="t.login.emailPlaceholder" :class="['w-full px-4 py-3 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
                     settingsStore.theme === 'dark'
                         ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
                         : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
@@ -52,7 +57,7 @@
                     :class="['block text-sm font-medium mb-2', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600']">{{
                         t.login.passwordLabel }}</label>
                 <div class="relative">
-                    <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••" :class="['w-full px-4 py-4 pr-12 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
+                    <input v-model="password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••" :class="['w-full px-4 py-3 pr-12 border rounded-xl focus:outline-none focus:border-red-500 transition-colors',
                         settingsStore.theme === 'dark'
                             ? 'bg-zinc-800 border-zinc-700 text-white placeholder-zinc-500'
                             : 'bg-zinc-50 border-zinc-300 text-zinc-900 placeholder-zinc-400']" />
@@ -88,34 +93,37 @@
 
             <!-- Submit Button -->
             <button type="submit" :disabled="isLoading"
-                class="w-full py-4 px-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 text-base">
+                class="w-full py-3 px-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl transition-colors disabled:opacity-50 text-base shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:shadow-primary/30 active:scale-[0.98] ">
                 {{ t.login.loginButton }}
             </button>
-        </form>
 
-        <!-- Create Account -->
-        <div class="mt-8 text-center">
-            <span :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-500']">{{
-                t.login.noAccount }}</span>
-            <a href="#"
-                :class="['text-sm font-semibold ml-1 transition-colors',
-                    settingsStore.theme === 'dark' ? 'text-white hover:text-red-500' : 'text-zinc-900 hover:text-red-500']">{{
-                        t.login.createAccount }}</a>
-        </div>
-
-        <!-- Footer -->
-        <div
-            :class="['mt-6 flex items-center justify-between text-xs', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">
-            <span>{{ t.login.footer.copyright }}</span>
-            <div class="flex items-center gap-6">
+            <!-- Create Account -->
+            <div class="text-center pt-2">
+                <span :class="['text-sm', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-500']">{{
+                    t.login.noAccount }}</span>
                 <a href="#"
-                    :class="['transition-colors', settingsStore.theme === 'dark' ? 'hover:text-zinc-300' : 'hover:text-zinc-600']">{{
-                        t.login.footer.privacy }}</a>
-                <a href="#"
-                    :class="['transition-colors', settingsStore.theme === 'dark' ? 'hover:text-zinc-300' : 'hover:text-zinc-600']">{{
-                        t.login.footer.terms }}</a>
+                    :class="['text-sm font-semibold ml-1 transition-colors',
+                        settingsStore.theme === 'dark' ? 'text-white hover:text-red-500' : 'text-zinc-900 hover:text-red-500']">{{
+                            t.login.createAccount }}</a>
             </div>
-        </div>
+
+            <!-- Spacer -->
+            <div class="flex-1"></div>
+
+            <!-- Footer -->
+            <div
+                :class="['pt-4 flex items-center justify-between text-xs', settingsStore.theme === 'dark' ? 'text-zinc-500' : 'text-zinc-400']">
+                <span>{{ t.login.footer.copyright }}</span>
+                <div class="flex items-center gap-4">
+                    <a href="#"
+                        :class="['transition-colors', settingsStore.theme === 'dark' ? 'hover:text-zinc-300' : 'hover:text-zinc-600']">{{
+                            t.login.footer.privacy }}</a>
+                    <a href="#"
+                        :class="['transition-colors', settingsStore.theme === 'dark' ? 'hover:text-zinc-300' : 'hover:text-zinc-600']">{{
+                            t.login.footer.terms }}</a>
+                </div>
+            </div>
+        </form>
     </div>
 </template>
 
@@ -123,6 +131,7 @@
 import { ref, computed } from 'vue'
 import { useSettingsStore } from '@/stores'
 import { useTranslations } from '@/i18n'
+import lobsterLogo from '@/assets/lobsterleadlogo.png'
 
 const settingsStore = useSettingsStore()
 const t = computed(() => useTranslations(settingsStore.language))
@@ -137,5 +146,6 @@ const handleSubmit = async () => {
     if (!email.value || !password.value) return
     isLoading.value = true
     await new Promise(resolve => setTimeout(resolve, 1500))
-    isLoading.value = false}
+    isLoading.value = false
+}
 </script>
