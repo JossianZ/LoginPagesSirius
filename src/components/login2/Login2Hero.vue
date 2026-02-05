@@ -10,20 +10,12 @@
 
         <!-- Workflow Diagram - Centered -->
         <div class="flex-1 flex items-center justify-center" @mousemove="handleMouseMove" @mouseleave="resetPosition">
-<<<<<<< HEAD
             <div class="flex items-center gap-4 transition-transform duration-500 ease-out" :style="{ transform: `translate(${offsetX}px, ${offsetY}px)` }">
                 <!-- Brand Box -->
                 <div class="flex flex-col items-center animate-float transition-all duration-300" 
                      :class="showBrand ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <div
                         :class="['w-16 h-16 rounded-xl border-2 flex items-center justify-center transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer',
-=======
-            <div class="flex items-center gap-6 transition-transform duration-500 ease-out" :style="{ transform: `translate(${offsetX}px, ${offsetY}px)` }">
-                <!-- Brand Box -->
-                <div class="flex flex-col items-center animate-float">
-                    <div
-                        :class="['w-20 h-20 rounded-2xl border-2 flex items-center justify-center transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer',
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
                             settingsStore.theme === 'dark' ? 'bg-zinc-800 border-zinc-700' : 'bg-zinc-100 border-zinc-300']">
                         <svg :class="['w-7 h-7', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500']"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -41,7 +33,6 @@
                 </div>
 
                 <!-- Arrow 1 - Purple -->
-<<<<<<< HEAD
                 <div class="relative transition-all duration-300" 
                      :class="showArrow1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <svg class="w-6 h-6 text-purple-500 animate-arrow-forward" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,19 +56,6 @@
                         <!-- Rotating Dotted Rectangle -->
                         <div class="absolute inset-1 border-2 border-dashed border-red-500/20 rounded-lg animate-spin-slow"></div>
                         <img :src="lobsterSmallLogo" alt="Lobster Lead" :class="['w-12 h-12 object-contain relative z-10', { 'animate-shake': isShaking }]" />
-=======
-                <svg class="w-8 h-8 text-purple-500 animate-arrow-forward" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-
-                <!-- Lobster Lead Box -->
-                <div class="flex flex-col items-center animate-float" style="animation-delay: 0.2s;">
-                    <div
-                        :class="['w-24 h-24 rounded-2xl border-2 flex items-center justify-center shadow-xl transition-all duration-300 hover:border-red-500 hover:shadow-red-500/50 cursor-pointer',
-                            settingsStore.theme === 'dark' ? 'bg-slate-800 border-slate-700 shadow-slate-900/40' : 'bg-slate-100 border-slate-300 shadow-slate-200/40']">
-                        <img :src="lobsterSmallLogo" alt="Lobster Lead" class="w-16 h-16 object-contain" />
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
                     </div>
                     <span
                         :class="['text-sm font-semibold mt-1.5', settingsStore.theme === 'dark' ? 'text-white' : 'text-zinc-900']">Lobster
@@ -86,7 +64,6 @@
                 </div>
 
                 <!-- Arrow 2 - Red -->
-<<<<<<< HEAD
                 <div class="relative transition-all duration-300" 
                      :class="showArrow2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <svg class="w-6 h-6 text-red-500 animate-arrow-forward" style="animation-delay: 0.1s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,19 +73,12 @@
                     <!-- Animated dot -->
                     <div class="absolute top-1/2 -translate-y-1/2 left-0 w-1 h-1 rounded-full bg-red-500 animate-dot-travel shadow-[0_0_6px_rgba(239,68,68,0.8)]" style="animation-delay: 0.5s;"></div>
                 </div>
-=======
-                <svg class="w-8 h-8 text-red-500 animate-arrow-forward" style="animation-delay: 0.1s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
 
                 <!-- Output Options -->
                 <div class="flex flex-col gap-1.5 transition-all duration-300" 
                      :class="showOutputs ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
                     <!-- Sosyal Medya - Purple -->
                     <div
-<<<<<<< HEAD
                         :class="['px-2.5 py-1.5 rounded-lg border-2 text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 cursor-pointer group relative overflow-visible',
                             settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 group-hover:border-purple-500/30 text-slate-300' : 'bg-slate-100 border-slate-300 group-hover:border-purple-500/30 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.3s;">
@@ -116,13 +86,6 @@
                         <div class="absolute rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse-border pointer-events-none border-2 border-purple-500" style="inset: -1px;"></div>
                         <div class="w-6 h-6 rounded-lg bg-purple-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
                             <svg class="w-3.5 h-3.5 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-=======
-                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
-                        style="animation-delay: 0.3s;">
-                        <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
                                 <path
                                     d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z" />
                             </svg>
@@ -132,7 +95,6 @@
                     </div>
                     <!-- Blog - Red -->
                     <div
-<<<<<<< HEAD
                         :class="['px-2.5 py-1.5 rounded-lg border-2 text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 cursor-pointer group relative overflow-visible',
                             settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 group-hover:border-red-500/30 text-slate-300' : 'bg-slate-100 border-slate-300 group-hover:border-red-500/30 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.4s;">
@@ -140,13 +102,6 @@
                         <div class="absolute rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse-border pointer-events-none border-2 border-red-500" style="inset: -1px;"></div>
                         <div class="w-6 h-6 rounded-lg bg-red-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
                             <svg class="w-3.5 h-3.5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-=======
-                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/50 cursor-pointer',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
-                        style="animation-delay: 0.4s;">
-                        <div class="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
                                 <path
                                     d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
                             </svg>
@@ -156,7 +111,6 @@
                     </div>
                     <!-- E-posta - Green -->
                     <div
-<<<<<<< HEAD
                         :class="['px-2.5 py-1.5 rounded-lg border-2 text-sm font-medium flex items-center gap-1.5 animate-float transition-all duration-300 cursor-pointer group relative overflow-visible',
                             settingsStore.theme === 'dark' ? 'bg-slate-800/80 border-slate-700 group-hover:border-green-500/30 text-slate-300' : 'bg-slate-100 border-slate-300 group-hover:border-green-500/30 text-slate-700 shadow-sm']"
                         style="animation-delay: 0.5s;">
@@ -164,13 +118,6 @@
                         <div class="absolute rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse-border pointer-events-none border-2 border-green-500" style="inset: -1px;"></div>
                         <div class="w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:animate-pulse-hover">
                             <svg class="w-3.5 h-3.5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-=======
-                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/50 cursor-pointer',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
-                        style="animation-delay: 0.5s;">
-                        <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
-                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
                                 <path
                                     d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                             </svg>
@@ -199,11 +146,7 @@
 </template>
 
 <script setup lang="ts">
-<<<<<<< HEAD
 import { computed, ref, onMounted } from 'vue'
-=======
-import { computed, ref } from 'vue'
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
 import { useSettingsStore } from '@/stores'
 import { useTranslations } from '@/i18n'
 import lobsterSmallLogo from '@/assets/lobstersmalllogo.png'
@@ -213,7 +156,6 @@ const t = computed(() => useTranslations(settingsStore.language))
 
 const offsetX = ref(0)
 const offsetY = ref(0)
-<<<<<<< HEAD
 const isShaking = ref(false)
 
 // Animation sequence states
@@ -231,8 +173,6 @@ onMounted(() => {
     setTimeout(() => showArrow2.value = true, 550)
     setTimeout(() => showOutputs.value = true, 700)
 })
-=======
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
 
 const handleMouseMove = (event: MouseEvent) => {
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect()
@@ -250,7 +190,6 @@ const resetPosition = () => {
     offsetX.value = 0
     offsetY.value = 0
 }
-<<<<<<< HEAD
 
 const handleLogoHover = () => {
     isShaking.value = true
@@ -258,8 +197,6 @@ const handleLogoHover = () => {
         isShaking.value = false
     }, 500)
 }
-=======
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
 </script>
 
 <style scoped>
@@ -281,7 +218,6 @@ const handleLogoHover = () => {
   }
 }
 
-<<<<<<< HEAD
 @keyframes dot-travel {
   0% {
     left: 50%;
@@ -397,8 +333,6 @@ const handleLogoHover = () => {
   }
 }
 
-=======
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -406,7 +340,6 @@ const handleLogoHover = () => {
 .animate-arrow-forward {
   animation: arrow-forward 2s ease-in-out infinite;
 }
-<<<<<<< HEAD
 
 .animate-dot-travel {
   animation: dot-travel 1s linear infinite;
@@ -450,6 +383,4 @@ const handleLogoHover = () => {
 .animate-shine {
   animation: shine 3s ease-in-out infinite;
 }
-=======
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
 </style>
