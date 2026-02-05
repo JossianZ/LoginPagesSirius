@@ -57,11 +57,7 @@
               </span>
             </div>
 
-<<<<<<< HEAD
             <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
-=======
-            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6 whitespace-nowrap">
->>>>>>> 4fe6cc34b2e3dbc8c68816c11c0b092f277ddbe3
               Seferi Lojistiği Yönetiyor
             </h1>
 
