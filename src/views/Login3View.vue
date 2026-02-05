@@ -168,10 +168,10 @@
           <!-- Continue Button -->
           <div class="flex justify-end mb-8">
             <button type="button"
-              class="text-indigo-600 hover:text-indigo-700 font-bold text-base flex items-center gap-2 transition-all duration-300 transform hover:translate-x-2">
+              class="text-indigo-600 hover:text-indigo-700 font-semibold text-sm flex items-center gap-2 transition-all duration-300 hover:translate-x-2 cursor-pointer">
               Devam Et
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
           </div>

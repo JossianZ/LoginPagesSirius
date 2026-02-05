@@ -1,6 +1,6 @@
 <template>
   <AuthLayout>
-    <div class="login4-view min-h-screen w-full flex">
+    <div class="login4-view min-h-screen w-full flex font-geist">
       <!-- Left Side - Hero -->
       <div class="hidden lg:block lg:w-1/2 bg-[#0a1628]">
         <Login4Hero />

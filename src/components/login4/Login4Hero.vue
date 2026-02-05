@@ -38,7 +38,7 @@
                 </div>
 
                 <!-- Feature 2 - Sesli AI Asistan (Right) -->
-                <div class="flex items-start gap-4 justify-end pl-24">
+                <div class="flex items-start gap-4 justify-end pl-40">
                     <div class="text-right">
                         <h3 class="text-white font-semibold text-base mb-1">Sesli AI Asistan</h3>
                         <p class="text-slate-400 text-sm">7/24 doğal dil işleme ile destek</p>
