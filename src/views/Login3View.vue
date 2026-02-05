@@ -10,22 +10,27 @@
         <!-- Content Container -->
         <div class="h-full flex flex-col items-center justify-center p-10 overflow-hidden">
           <!-- Boss AI Logo -->
-          <img :src="bossaiLogo" alt="Boss AI" class="w-28 h-28 object-contain mb-8 transition-transform duration-300 hover:scale-110" />
+          <div class="relative group mb-8 mt-16">
+            <!-- Background glow -->
+            <div class="absolute inset-0 bg-white/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <img :src="bossaiLogo" alt="Boss AI" class="w-28 h-28 object-contain relative z-10 transition-transform duration-300 group-hover:scale-110" />
+          </div>
 
           <!-- Title -->
-          <h1 class="text-5xl font-bold text-white text-center mb-6">
+          <h1 class="text-5xl font-bold text-white text-center mb-6" style="text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.15);">
             İşletmenizin<br />
-            <span class="inline-block bg-gradient-to-r from-white via-white to-gray-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">Dijital Asistanı</span>
+            <span class="inline-block bg-gradient-to-r from-white via-white to-gray-400 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]" style="text-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.15);">Dijital Asistanı</span>
           </h1>
 
           <!-- Features Button -->
           <button
-            class="px-6 py-2.5 bg-white hover:bg-white/90 rounded-lg text-[#4000F0] text-base font-semibold transition-all duration-200 mb-8">
+            class="px-6 py-2.5 bg-white hover:bg-white/90 rounded-lg text-[#4000F0] text-base font-semibold transition-all duration-200 mb-6">
             Özellikler
           </button>
 
           <!-- Carousel Dots -->
-          <div class="flex items-center gap-3 mb-10">
+          <div class="flex items-center gap-3 mb-8">
             <button @click="currentSlide = 0"
               :class="['rounded-full transition-all', currentSlide === 0 ? 'w-3 h-3 bg-white' : 'w-2.5 h-2.5 bg-white/40']"></button>
             <button @click="currentSlide = 1"
@@ -37,7 +42,7 @@
           </div>
 
           <!-- Feature Card -->
-          <div class="group relative max-w-lg mb-4 cursor-pointer">
+          <div class="group relative max-w-lg mb-2 cursor-pointer">
             <!-- Glass Background on Hover -->
             <div
               class="absolute -inset-4 rounded-2xl bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -112,7 +117,7 @@
           </div>
 
           <!-- Navigation Arrows -->
-          <div class="flex items-center justify-center gap-96 mb-6 mt-8">
+          <div class="flex items-center justify-center gap-96 mb-4 mt-4">
             <button @click="prevSlide" :disabled="currentSlide === 0"
               :class="['w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-colors', currentSlide === 0 ? 'opacity-40 cursor-not-allowed' : 'hover:bg-white/20']">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
