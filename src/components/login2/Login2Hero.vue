@@ -1,7 +1,7 @@
 <template>
-    <div class="login2-hero h-full flex flex-col relative justify-between">
+    <div class="login2-hero h-full flex flex-col relative">
         <!-- Version Badge - Top Right -->
-        <div class="absolute -top-3 right-0 z-10">
+        <div class="absolute top-0 right-0">
             <span :class="['px-3 py-1.5 text-xs font-medium rounded-full',
                 settingsStore.theme === 'dark' ? 'bg-zinc-800 text-white' : 'bg-zinc-900 text-white']">
                 {{ t.hero.version }}
@@ -9,12 +9,12 @@
         </div>
 
         <!-- Workflow Diagram - Centered -->
-        <div class="flex items-center justify-center flex-1">
-            <div class="flex items-center gap-6">
+        <div class="flex-1 flex items-center justify-center" @mousemove="handleMouseMove" @mouseleave="resetPosition">
+            <div class="flex items-center gap-6 transition-transform duration-500 ease-out" :style="{ transform: `translate(${offsetX}px, ${offsetY}px)` }">
                 <!-- Brand Box -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center animate-float">
                     <div
-                        :class="['w-20 h-20 rounded-2xl border flex items-center justify-center animate-float',
+                        :class="['w-20 h-20 rounded-2xl border-2 flex items-center justify-center transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer',
                             settingsStore.theme === 'dark' ? 'bg-zinc-800 border-zinc-700' : 'bg-zinc-100 border-zinc-300']">
                         <svg :class="['w-9 h-9', settingsStore.theme === 'dark' ? 'text-zinc-400' : 'text-zinc-500']"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -32,15 +32,16 @@
                 </div>
 
                 <!-- Arrow 1 - Purple -->
-                <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8 text-purple-500 animate-arrow-forward" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
 
                 <!-- Lobster Lead Box -->
-                <div class="flex flex-col items-center">
-                    <div :class="['w-24 h-24 rounded-2xl flex items-center justify-center border-2 border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.6)] animate-float-delayed',
-                        settingsStore.theme === 'dark' ? 'bg-slate-900' : 'bg-white']">
+                <div class="flex flex-col items-center animate-float" style="animation-delay: 0.2s;">
+                    <div
+                        :class="['w-24 h-24 rounded-2xl border-2 flex items-center justify-center shadow-xl transition-all duration-300 hover:border-red-500 hover:shadow-red-500/50 cursor-pointer',
+                            settingsStore.theme === 'dark' ? 'bg-slate-800 border-slate-700 shadow-slate-900/40' : 'bg-slate-100 border-slate-300 shadow-slate-200/40']">
                         <img :src="lobsterSmallLogo" alt="Lobster Lead" class="w-16 h-16 object-contain" />
                     </div>
                     <span
@@ -50,59 +51,54 @@
                 </div>
 
                 <!-- Arrow 2 - Red -->
-                <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8 text-red-500 animate-arrow-forward" style="animation-delay: 0.1s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
 
                 <!-- Output Options -->
-                <div class="flex flex-col gap-2">
+                <div class="flex flex-col gap-2.5">
                     <!-- Sosyal Medya - Purple -->
                     <div
-                        :class="['px-3 py-2 rounded-lg border text-xs font-medium flex items-center gap-2',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']">
-                        <div
-                            class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-share2 lucide-share-2 size-3"
-                                aria-hidden="true" style="color: rgb(89, 63, 217);">
-                                <circle cx="18" cy="5" r="3"></circle>
-                                <circle cx="6" cy="12" r="3"></circle>
-                                <circle cx="18" cy="19" r="3"></circle>
-                                <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
-                                <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/50 cursor-pointer',
+                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
+                        style="animation-delay: 0.3s;">
+                        <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z" />
                             </svg>
                         </div>
                         {{ t.hero.badge.socialMedia }}
-                        <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse-glow-purple ml-auto"></span>
+                        <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
                     </div>
                     <!-- Blog - Red -->
                     <div
-                        :class="['px-3 py-2 rounded-lg border text-xs font-medium flex items-center gap-2',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']">
-                        <div class="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-red-500 hover:shadow-lg hover:shadow-red-500/50 cursor-pointer',
+                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
+                        style="animation-delay: 0.4s;">
+                        <div class="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
                             </svg>
                         </div>
                         {{ t.hero.badge.blog }}
-                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse-glow-red ml-auto"></span>
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                     </div>
                     <!-- E-posta - Green -->
                     <div
-                        :class="['px-3 py-2 rounded-lg border text-xs font-medium flex items-center gap-2',
-                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']">
-                        <div
-                            class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
-                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                        :class="['px-4 py-2.5 rounded-xl border text-sm font-medium flex items-center gap-3 animate-float transition-all duration-300 hover:border-green-500 hover:shadow-lg hover:shadow-green-500/50 cursor-pointer',
+                            settingsStore.theme === 'dark' ? 'bg-zinc-800/80 border-zinc-700 text-zinc-300' : 'bg-white border-zinc-200 text-zinc-700 shadow-sm']"
+                        style="animation-delay: 0.5s;">
+                        <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                             </svg>
                         </div>
                         {{ t.hero.badge.email }}
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse-glow-green ml-auto"></span>
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                     </div>
                 </div>
             </div>
@@ -125,100 +121,59 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useSettingsStore } from '@/stores'
 import { useTranslations } from '@/i18n'
 import lobsterSmallLogo from '@/assets/lobstersmalllogo.png'
 
 const settingsStore = useSettingsStore()
 const t = computed(() => useTranslations(settingsStore.language))
-</script>
 
+const offsetX = ref(0)
+const offsetY = ref(0)
+
+const handleMouseMove = (event: MouseEvent) => {
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect()
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+    const mouseX = event.clientX - rect.left
+    const mouseY = event.clientY - rect.top
+    
+    // Calculate offset based on mouse position (max 8px movement for smoother effect)
+    offsetX.value = ((mouseX - centerX) / centerX) * 8
+    offsetY.value = ((mouseY - centerY) / centerY) * 8
+}
+
+const resetPosition = () => {
+    offsetX.value = 0
+    offsetY.value = 0
+}
+</script>
 
 <style scoped>
 @keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-@keyframes float-delayed {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes pulse-glow-purple {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.3);
-        box-shadow: 0 0 8px 2px rgba(168, 85, 247, 0.8);
-    }
-}
-
-@keyframes pulse-glow-red {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.3);
-        box-shadow: 0 0 8px 2px rgba(239, 68, 68, 0.8);
-    }
-}
-
-@keyframes pulse-glow-green {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.3);
-        box-shadow: 0 0 8px 2px rgba(34, 197, 94, 0.8);
-    }
+@keyframes arrow-forward {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(8px);
+  }
 }
 
 .animate-float {
-    animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
-.animate-float-delayed {
-    animation: float-delayed 3s ease-in-out infinite;
-    animation-delay: 0.5s;
-}
-
-.animate-pulse-glow-purple {
-    animation: pulse-glow-purple 1.2s ease-in-out infinite;
-}
-
-.animate-pulse-glow-red {
-    animation: pulse-glow-red 1.2s ease-in-out infinite;
-    animation-delay: 0.2s;
-}
-
-.animate-pulse-glow-green {
-    animation: pulse-glow-green 1.2s ease-in-out infinite;
-    animation-delay: 0.4s;
+.animate-arrow-forward {
+  animation: arrow-forward 2s ease-in-out infinite;
 }
 </style>
