@@ -67,7 +67,7 @@
             </div>
 
             <!-- Bottom Text with Headphone Icon -->
-            <div class="mt-12 pt-6 border-t border-cyan-500/30 flex items-center justify-center gap-2 w-full max-w-lg">
+            <div class="mt-12 pt-6 border-t border-blue-500/40 flex items-center justify-center gap-2 w-full max-w-2xl">
                 <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 14h3a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-7a9 9 0 0118 0v7a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3" />

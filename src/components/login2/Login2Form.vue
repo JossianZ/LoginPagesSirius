@@ -131,10 +131,15 @@
 import { ref, computed } from 'vue'
 import { useSettingsStore } from '@/stores'
 import { useTranslations } from '@/i18n'
-import lobsterLogo from '@/assets/lobsterleadlogo.png'
+import lobsterLogoDark from '@/assets/lobsterleadlogo.png'
+import lobsterLogoLight from '@/assets/lobsterleadwhitemode.png'
 
 const settingsStore = useSettingsStore()
 const t = computed(() => useTranslations(settingsStore.language))
+
+const lobsterLogo = computed(() => 
+    settingsStore.theme === 'dark' ? lobsterLogoDark : lobsterLogoLight
+)
 
 const email = ref('')
 const password = ref('')

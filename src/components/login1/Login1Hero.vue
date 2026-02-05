@@ -57,7 +57,7 @@
               </span>
             </div>
 
-            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6 whitespace-nowrap">
+            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
               Seferi Lojistiği Yönetiyor
             </h1>
 
@@ -87,7 +87,7 @@ Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık 
               </span>
             </div>
 
-            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6 whitespace-nowrap">
+            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
               Seferi Rotaları Optimize Ediyor
             </h1>
 
@@ -118,7 +118,7 @@ Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık 
               </span>
             </div>
 
-            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6 whitespace-nowrap">
+            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
               Seferi Kargoları İzliyor
             </h1>
 
@@ -149,7 +149,7 @@ Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık 
               </span>
             </div>
 
-            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6 whitespace-nowrap">
+            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
               Seferi Depoları Yönetiyor
             </h1>
 
