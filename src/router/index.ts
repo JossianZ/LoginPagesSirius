@@ -32,7 +32,7 @@ const routes: RouteRecordRaw[] = [
         name: 'Login3',
         component: () => import('@/views/Login3View.vue'),
         meta: {
-            title: 'Login 3',
+            title: 'BOSS AI - Giriş',
             layout: 'auth'
         }
     },
@@ -41,7 +41,7 @@ const routes: RouteRecordRaw[] = [
         name: 'Login4',
         component: () => import('@/views/Login4View.vue'),
         meta: {
-            title: 'Login 4',
+            title: 'Calling AI - Giriş',
             layout: 'auth'
         }
     }
