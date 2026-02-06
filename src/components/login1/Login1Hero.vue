@@ -66,12 +66,12 @@ Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık 
             </p>
 
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-sm mb-2">
+              <div class="w-3/4 flex items-center justify-between text-sm mb-2">
                 <span class="text-gray-300 font-medium">Süreç Otomasyonu</span>
-                <span class="text-teal-400 font-semibold">87% Doğruluk</span>
+                <span class="text-white font-semibold">87% Doğruluk</span>
               </div>
-              <div class="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden">
-                <div class="h-full rounded-full transition-all duration-1000 bg-gradient-to-r from-teal-600 via-teal-500 to-teal-400" style="width: 98%"></div>
+              <div class="w-3/4 h-2 bg-slate-800/80 rounded-full overflow-hidden">
+                <div class="h-full rounded-full transition-all duration-1000 bg-gradient-to-r from-teal-600 via-teal-500 to-teal-400" style="width: 87%"></div>
               </div>
             </div>
           </div>
@@ -97,11 +97,11 @@ Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık 
             </p>
 
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-sm mb-2">
+              <div class="w-3/4 flex items-center justify-between text-sm mb-2">
                 <span class="text-gray-300 font-medium">Rota Optimizasyonu</span>
-                <span class="text-blue-400 font-semibold">95% Verimlilik</span>
+                <span class="text-white font-semibold">95% Verimlilik</span>
               </div>
-              <div class="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden">
+              <div class="w-3/4 h-2 bg-slate-800/80 rounded-full overflow-hidden">
                 <div class="h-full rounded-full transition-all duration-1000 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400" style="width: 95%"></div>
               </div>
             </div>
@@ -128,11 +128,11 @@ Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık 
             </p>
 
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-sm mb-2">
+              <div class="w-3/4 flex items-center justify-between text-sm mb-2">
                 <span class="text-gray-300 font-medium">Kargo Takibi</span>
-                <span class="text-purple-400 font-semibold">99% Görünürlük</span>
+                <span class="text-white font-semibold">99% Görünürlük</span>
               </div>
-              <div class="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden">
+              <div class="w-3/4 h-2 bg-slate-800/80 rounded-full overflow-hidden">
                 <div class="h-full rounded-full transition-all duration-1000 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400" style="width: 99%"></div>
               </div>
             </div>
@@ -159,11 +159,11 @@ Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık 
             </p>
 
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-sm mb-2">
+              <div class="w-3/4 flex items-center justify-between text-sm mb-2">
                 <span class="text-gray-300 font-medium">Depo Verimliliği</span>
-                <span class="text-amber-400 font-semibold">96% Optimizasyon</span>
+                <span class="text-white font-semibold">96% Optimizasyon</span>
               </div>
-              <div class="w-full h-2 bg-slate-700/50 rounded-full overflow-hidden">
+              <div class="w-3/4 h-2 bg-slate-800/80 rounded-full overflow-hidden">
                 <div class="h-full rounded-full transition-all duration-1000 bg-gradient-to-r from-amber-600 via-amber-500 to-amber-400" style="width: 96%"></div>
               </div>
             </div>
