@@ -179,10 +179,9 @@
         </div>
       </div>
 
-      <!-- Pagination Indicators -->
-      <div class="flex items-center justify-center mt-8 gap-2">
-        <button v-for="(_, index) in 4" :key="index" @click="currentSlide = index"
-          :class="['w-3 h-3 rounded-full transition-all duration-300', currentSlide === index ? 'bg-white scale-110' : 'bg-white/30 hover:bg-white/50']" />
+      <!-- Pagination Indicator -->
+      <div class="flex items-center justify-center mt-8">
+        <div class="w-3 h-3 rounded-full bg-white cursor-pointer"></div>
       </div>
     </div>
   </div>

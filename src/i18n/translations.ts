@@ -75,7 +75,7 @@ export const translations: Record<'tr' | 'en', TranslationSchema> = {
                 blog: 'Blog',
                 email: 'E-posta'
             },
-            title: 'Icerik üretiminin',
+            title: 'Icerik uretiminin',
             titleHighlight: 'yeni standardi.',
             description: 'Yapay zeka ile saniyeler içinde SEO uyumlu blog yazıları ve sosyal medya içerikleri oluşturun.',
             features: {
