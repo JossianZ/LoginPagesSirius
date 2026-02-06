@@ -42,10 +42,7 @@
           <SInput v-model="username" type="text" required placeholder="Enter your username" size="md" :error="error"
             autocomplete="username" :hasLeftIcon="true">
             <template #iconLeft>
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 text-gray-400"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
             </template>
           </SInput>
 
@@ -78,7 +75,7 @@
     </div>
 
     <!-- Footer -->
-    <div class="p-6 text-center">
+    <div class="p-8 text-center">
       <p class="text-xs text-gray-400">
         Powered by Sirius AI Tech © 2025
       </p>
