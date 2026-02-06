@@ -54,10 +54,7 @@
               Seferi Lojistiği Yönetiyor
             </h1>
 
-            <p class="text-gray-400 text-lg leading-relaxed mb-12">Şimdi CSS'e clamp() ile dinamik font boyutu
-              ekleyeceğim ve h1 başlıklarını düzgün ayarlayacağım:
-
-
+            <p class="text-gray-400 text-lg leading-relaxed mb-12">
               Platformumuz, sürücü atamalarından dijital dokümantasyona kadar karmaşık lojistik iş akışlarını
               otomatikleştirerek idari iş yükünü %65, insan hatasını ise %92 oranında azaltıyor.
             </p>
