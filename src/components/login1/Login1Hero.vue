@@ -27,12 +27,12 @@
     <!-- Animated Background Circles -->
     <div class="absolute inset-0 overflow-hidden">
       <!-- Kırmızımsı/Mor daire - üst solda -->
-      <div class="absolute w-[280px] h-[280px] rounded-full left-1/2 top-1/2"
+      <div class="absolute w-[250px] h-[250px] rounded-full left-1/2 top-1/2"
         style="transform: translate(-80%, -60%); background: radial-gradient(circle, rgba(100, 60, 80, 0.5) 0%, rgba(80, 50, 70, 0.35) 60%, rgba(60, 40, 60, 0.15) 85%, transparent 100%); animation: float 10s ease-in-out infinite;" />
       
       <!-- Mavi daire - kırmızının sağ alt çaprazında, daha küçük -->
-      <div class="absolute w-[280px] h-[280px] rounded-full left-1/2 top-1/2"
-        style="transform: translate(-10%, 30%); background: radial-gradient(circle, rgba(40, 70, 110, 0.5) 0%, rgba(30, 60, 100, 0.35) 60%, rgba(20, 50, 90, 0.15) 85%, transparent 100%); animation: float 8s ease-in-out infinite 1s;" />
+      <div class="absolute w-[250px] h-[250px] rounded-full left-1/2 top-1/2"
+        style="transform: translate(-25%, -20%); background: radial-gradient(circle, rgba(40, 70, 110, 0.5) 0%, rgba(30, 60, 100, 0.35) 60%, rgba(20, 50, 90, 0.15) 85%, transparent 100%); animation: float 8s ease-in-out infinite 1s;" />
     </div>
 
     <!-- Content -->
